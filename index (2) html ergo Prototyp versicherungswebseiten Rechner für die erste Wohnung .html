@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERGO · Versicherungen für den ersten eigenen Haushalt</title>
+<meta name="description" content="Versicherungen für deine erste eigene Wohnung – einfach erklärt für junge Leute. Beiträge berechnen, Hausrat erfassen, Tarife vergleichen und schnell verlässliche Infos finden.">
+<meta name="theme-color" content="#e2001a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Versicherungen für die erste eigene Wohnung">
+<meta property="og:description" content="Einfach erklärt für junge Leute: Beitrag berechnen, Hausrat erfassen, Tarife vergleichen.">
+<meta property="og:locale" content="de_DE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#e2001a;
+    --navy-700:#b3000f;
+    --navy-900:#8a000c;
+    --red:#e2001a;
+    --red-soft:#fbe7ea;
+    --paper:#f5f3f3;
+    --surface:#ffffff;
+    --ink:#1b1e24;
+    --muted:#585d67;
+    --line:#e8e3e3;
+    --line-strong:#d4cccc;
+    --tint:#fdedef;
+    --ok:#11814a;
+    --ok-soft:#e4f3eb;
+    --amber:#9a6a12;
+    --amber-soft:#f6edd9;
+    --r-lg:16px;
+    --r-md:12px;
+    --r-sm:9px;
+    --maxw:1080px;
+    --sh-sm:0 1px 2px rgba(15,20,48,.05), 0 1px 1px rgba(15,20,48,.03);
+    --sh-md:0 6px 24px rgba(10,31,77,.08), 0 2px 6px rgba(10,31,77,.05);
+    --sh-lg:0 18px 48px rgba(10,31,77,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Schibsted Grotesk',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .topline{height:3px;background:var(--red)}
+
+  /* ── ICONS ── */
+  svg.ic{width:1em;height:1em;display:block;flex-shrink:0}
+  .ic-lg{font-size:22px}
+
+  /* ── NAV ── */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{
+    max-width:var(--maxw);margin:0 auto;height:62px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 24px;
+  }
+  .brand{display:flex;align-items:center;gap:9px;cursor:pointer}
+  .brand .word{font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--navy)}
+  .brand .sq{width:9px;height:9px;background:var(--red);border-radius:2px;margin-bottom:11px}
+  .tabs{display:flex;gap:4px;align-items:center}
+  .tab{
+    display:flex;align-items:center;gap:7px;
+    border:none;background:transparent;cursor:pointer;
+    font-family:inherit;font-size:14px;font-weight:500;color:var(--muted);
+    padding:9px 14px;border-radius:8px;transition:color .2s,background .2s;
+    position:relative;
+  }
+  .tab .ic{font-size:17px}
+  .tab:hover{color:var(--navy);background:var(--tint)}
+  .tab.active{color:var(--navy);font-weight:600}
+  .tab.active::after{
+    content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;
+    background:var(--red);border-radius:2px;
+  }
+  .tab-labels{display:inline}
+  @media(max-width:680px){
+    .nav-in{padding:0 14px}
+    .tab{padding:9px 9px}
+    .tab-labels{display:none}
+  }
+  @media(max-width:430px){
+    .hero-meta .m{padding:0 10px}
+    .hero-meta .m b{font-size:20px}
+    .hero-meta .m span{font-size:11.5px}
+  }
+
+  /* ── SECTIONS ── */
+  .section{display:none}
+  .section.active{display:block;animation:fade .45s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  @media(max-width:680px){.wrap{padding:0 16px}}
+
+  .eyebrow{
+    font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--navy);
+  }
+  h2.title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,3.4vw,34px);letter-spacing:-.3px;line-height:1.15;color:var(--navy)}
+  .lead{color:var(--muted);font-size:16px;max-width:560px}
+
+  /* ── HERO ── */
+  .hero{padding:64px 0 36px}
+  .hero-in{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center}
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(34px,5.2vw,54px);line-height:1.06;letter-spacing:-1px;
+    margin:14px 0 18px;
+  }
+  .hero h1 .accent{font-style:italic;color:var(--navy)}
+  .hero p.sub{color:var(--muted);font-size:18px;max-width:480px;margin-bottom:28px}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;
+    padding:13px 22px;border-radius:10px;border:1px solid transparent;
+    transition:transform .18s,box-shadow .18s,background .18s,border-color .18s;
+    text-decoration:none;
+  }
+  .btn .ic{font-size:17px}
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{background:var(--navy-700);transform:translateY(-2px);box-shadow:var(--sh-md)}
+  .btn-ghost{background:transparent;color:var(--navy);border-color:var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--navy);background:var(--surface);transform:translateY(-2px)}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:#c40017;transform:translateY(-2px);box-shadow:var(--sh-md)}
+  .hero-meta{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border-top:1px solid var(--line);padding-top:18px}
+  .hero-meta .m{display:flex;flex-direction:column;gap:3px;padding:0 16px}
+  .hero-meta .m:first-child{padding-left:0}
+  .hero-meta .m + .m{border-left:1px solid var(--line)}
+  .hero-meta .m b{font-family:'Fraunces',serif;font-size:23px;font-weight:600;color:var(--navy);line-height:1.05}
+  .hero-meta .m span{font-size:12.5px;color:var(--muted);line-height:1.3}
+
+  .hero-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+    box-shadow:var(--sh-md);overflow:hidden;
+  }
+  .hc-illu{line-height:0;border-bottom:1px solid var(--line)}
+  .hc-illu svg{display:block;width:100%;height:auto}
+  .scene{border-radius:18px;overflow:hidden;margin-bottom:26px;border:1px solid var(--line);box-shadow:var(--sh-sm);line-height:0}
+  .scene svg{display:block;width:100%;height:auto}
+  .hero-card .hc-head{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  .hero-card .hc-head .ic{font-size:18px;color:var(--navy)}
+  .hero-card .hc-head h3{font-size:14px;font-weight:600}
+  .hc-row{display:flex;align-items:center;gap:14px;padding:15px 22px;border-bottom:1px solid var(--line)}
+  .hc-row:last-of-type{border-bottom:none}
+  .hc-ic{width:38px;height:38px;border-radius:9px;background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+  .hc-row .t{flex:1}
+  .hc-row .t b{display:block;font-size:14px;font-weight:600}
+  .hc-row .t span{font-size:12.5px;color:var(--muted)}
+  .hc-tag{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap}
+  .tag-high{background:var(--red-soft);color:var(--red)}
+  .tag-must{background:var(--tint);color:var(--navy)}
+  .hc-foot{padding:13px 22px;background:var(--navy);color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+  .hc-foot .ic{font-size:16px;transition:transform .2s}
+  .hc-foot:hover .ic{transform:translateX(4px)}
+
+  @media(max-width:840px){
+    .hero-in{grid-template-columns:1fr;gap:36px}
+    .hero{padding:42px 0 24px}
+  }
+
+  /* ── OVERVIEW GRID ── */
+  .block{padding:46px 0}
+  .block-head{margin-bottom:30px}
+  .block-head h2{margin:10px 0 10px}
+  .grid{display:flex;flex-direction:column;gap:14px;max-width:880px;margin:0 auto}
+  .icard{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+    padding:24px;transition:transform .2s,box-shadow .2s,border-color .2s;
+    position:relative;display:flex;flex-direction:column;cursor:pointer;
+  }
+  .icard:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:var(--line-strong)}
+  .icard.featured{border-color:var(--red);box-shadow:0 0 0 1px var(--red) inset}
+  .icard .badge{
+    position:absolute;top:18px;right:18px;font-size:11px;font-weight:700;letter-spacing:.4px;
+    background:var(--red);color:#fff;padding:4px 10px;border-radius:20px;
+  }
+  .icard .ibox{width:46px;height:46px;border-radius:11px;background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+  .icard.featured .ibox{background:var(--red-soft);color:var(--red)}
+  .icard h3{font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:-.2px}
+  .icard-head{display:flex;align-items:flex-start;gap:14px}
+  .icard-head .ibox{margin-bottom:0;flex:0 0 auto}
+  .icard-head-main{flex:1 1 auto;min-width:0}
+  .icard-head-main h3{margin-bottom:3px}
+  .icard-intro{font-size:13.5px;color:var(--muted);line-height:1.4;margin:0}
+  .acc-chevron{flex:0 0 auto;width:20px;height:20px;color:var(--muted);transition:transform .3s ease;margin-top:12px}
+  .icard.open .acc-chevron{transform:rotate(180deg);color:var(--navy)}
+  .acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s ease}
+  .icard.open .acc-body{grid-template-rows:1fr}
+  .acc-body-inner{overflow:hidden}
+  .acc-inner{padding-top:16px;display:flex;flex-direction:column;gap:13px}
+  .acc-desc{font-size:14px;color:var(--muted);line-height:1.55;margin:0}
+  .acc-sub{font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--navy);margin:0}
+  .acc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+  .acc-list li{position:relative;padding-left:18px;font-size:14px;color:var(--ink);line-height:1.4}
+  .acc-list li::before{content:"";position:absolute;left:0;top:6px;width:6px;height:6px;border-radius:50%;background:var(--navy)}
+  .acc-example{background:var(--tint);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--ink);line-height:1.5}
+  .acc-cta{align-self:flex-start;margin-top:2px}
+  .icard .foot{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .prio{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600}
+  .dot{width:8px;height:8px;border-radius:50%}
+  .dot.high{background:var(--red)} .dot.must{background:var(--navy)} .dot.mid{background:var(--amber)} .dot.low{background:#9aa1b8}
+  .prio .lbl{color:var(--muted)}
+  .price-from{font-size:13px;font-weight:600;color:var(--ink)}
+
+  /* ── TIPS ── */
+  .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .tip{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--navy);border-radius:var(--r-md);padding:20px}
+  .tip .ic{font-size:22px;color:var(--navy);margin-bottom:12px}
+  .tip h4{font-size:15px;font-weight:700;margin-bottom:6px}
+  .tip p{font-size:14px;color:var(--muted);line-height:1.55}
+  .tip ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+  .tip li{position:relative;padding-left:18px;font-size:14px;color:var(--muted);line-height:1.4}
+  .tip li::before{content:"";position:absolute;left:0;top:6px;width:6px;height:6px;border-radius:50%;background:var(--navy)}
+
+  /* ── TRUST BAND ── */
+  .trust-band{display:flex;flex-wrap:wrap;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 20px;box-shadow:var(--sh-sm);margin-top:-8px}
+  .trust-item{display:flex;align-items:center;gap:11px;flex:1;min-width:200px}
+  .trust-item .ic{font-size:21px;color:var(--navy);flex-shrink:0}
+  .trust-item b{display:block;font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.2}
+  .trust-item span small{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:1px}
+  .trust-item + .trust-item{border-left:1px solid var(--line);padding-left:14px}
+  @media(max-width:680px){.trust-item + .trust-item{border-left:none;padding-left:0}}
+
+  /* ── INSIGHTS ── */
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+  .stat-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;box-shadow:var(--sh-sm);position:relative;overflow:hidden}
+  .stat-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--navy)}
+  .stat-card.red::before{background:var(--navy)}
+  .stat-card b{display:block;font-family:'Fraunces',serif;font-size:42px;font-weight:600;color:var(--navy);line-height:1;letter-spacing:-1px}
+  .stat-card.red b{color:var(--navy)}
+  .stat-card span{display:block;font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.45}
+  .sources{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-sm);padding:26px}
+  .sources-head{margin-bottom:20px}
+  .sources-head h3{font-size:17px;font-weight:700;letter-spacing:-.2px}
+  .sources-head span{font-size:13px;color:var(--muted)}
+  .src-row{display:grid;grid-template-columns:130px 1fr 48px;align-items:center;gap:14px;margin-bottom:13px}
+  .src-row:last-of-type{margin-bottom:0}
+  .src-label{font-size:13.5px;font-weight:600;color:var(--ink)}
+  .src-track{height:12px;background:var(--tint);border-radius:7px;overflow:hidden}
+  .src-track > i{display:block;height:100%;background:var(--navy);border-radius:7px;transform-origin:left;animation:grow 1s cubic-bezier(.22,1,.36,1)}
+  .src-row.hot .src-track > i{background:var(--navy)}
+  .src-row.hot .src-label{color:var(--ink)}
+  .src-val{font-size:14px;font-weight:700;color:var(--navy);text-align:right;font-variant-numeric:tabular-nums}
+  .src-row.hot .src-val{color:var(--navy)}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .source-note{font-size:11.5px;color:var(--muted);margin-top:20px;padding-top:16px;border-top:1px solid var(--line);line-height:1.5}
+  .data-note{display:flex;align-items:flex-start;gap:10px;background:var(--tint);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 15px;margin-top:16px;max-width:580px}
+  .data-note .ic{font-size:18px;color:var(--navy);flex-shrink:0;margin-top:1px}
+  .data-note p{font-size:13px;color:var(--ink);line-height:1.5;margin:0}
+  .data-note b{color:var(--navy);font-weight:700}
+  .data-note .src{display:block;font-size:11.5px;color:var(--muted);margin-top:3px}
+  .role-note{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--tint);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;margin:0 0 14px}
+  .role-h{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin:0 0 8px}
+  .role-h svg{width:15px;height:15px;flex:0 0 auto}
+  .role-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .role-list li{position:relative;padding-left:15px;font-size:12.5px;color:var(--ink);line-height:1.45}
+  .role-list li::before{content:'';position:absolute;left:2px;top:7px;width:5px;height:5px;border-radius:50%;background:var(--navy)}
+  .role-list b{color:var(--navy);font-weight:700}
+  @media(max-width:560px){.role-note{grid-template-columns:1fr;gap:12px}}
+  @media(max-width:560px){.src-row{grid-template-columns:96px 1fr 40px;gap:10px}.src-label{font-size:12.5px}}
+
+  /* ── Modernisierter Statistik-Block (Ende Infos-Seite) ── */
+  .insights-block{order:7;margin-top:42px;padding-top:34px;border-top:1px solid var(--line)}
+  .ib-head{margin-bottom:24px}
+  .ib-title{font-family:'Fraunces',serif;font-size:clamp(21px,4.4vw,29px);font-weight:600;color:var(--navy);line-height:1.16;margin:7px 0 10px;letter-spacing:-.3px}
+  .ib-lead{font-size:15px;color:var(--muted);line-height:1.6;max-width:680px;margin:0}
+  .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px}
+  .kpi-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 16px;display:flex;flex-direction:column;gap:9px;box-shadow:var(--sh-sm)}
+  .kpi-ic{width:38px;height:38px;border-radius:11px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--navy);flex:0 0 auto}
+  .kpi-ic svg{width:20px;height:20px}
+  .kpi-card b{font-family:'Fraunces',serif;font-size:31px;font-weight:600;color:var(--navy);line-height:1;letter-spacing:-1px}
+  .kpi-card span{font-size:12.5px;color:var(--muted);line-height:1.42}
+  .srcbars{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--sh-sm)}
+  .srcbars-head{margin-bottom:6px}
+  .srcbars-head h4{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 3px;letter-spacing:-.2px}
+  .srcbars-head span{font-size:13px;color:var(--muted)}
+  .sbar{display:grid;grid-template-columns:152px 1fr 46px;align-items:center;gap:12px;margin-top:14px}
+  .sbar-label{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--ink)}
+  .sbar-label svg{width:16px;height:16px;color:var(--navy);flex:0 0 auto}
+  .sbar-track{height:11px;border-radius:20px;background:var(--tint);overflow:hidden}
+  .sbar-track i{display:block;height:100%;border-radius:20px;background:var(--navy)}
+  .sbar-val{font-size:14px;font-weight:700;color:var(--navy);text-align:right;font-variant-numeric:tabular-nums}
+  .srcbars-note{font-size:11.5px;color:var(--muted);line-height:1.5;margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+  @media(max-width:680px){
+    .kpi-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+    .sbar{grid-template-columns:112px 1fr 40px;gap:9px}
+    .sbar-label{font-size:12px;gap:7px}
+    .sbar-label svg{width:14px;height:14px}
+  }
+  @media(max-width:380px){.sbar{grid-template-columns:92px 1fr 38px}.sbar-label{font-size:11px}}
+
+  /* ── JOURNEY ── */
+  .timeline{position:relative;margin-top:8px}
+  .tstep{display:grid;grid-template-columns:auto 1fr;gap:20px;padding-bottom:8px}
+  .tnode{display:flex;flex-direction:column;align-items:center}
+  .tcircle{
+    width:42px;height:42px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;font-weight:700;background:var(--surface);
+    border:2px solid var(--line-strong);color:var(--muted);z-index:1;
+  }
+  .tstep.done .tcircle{background:var(--navy);border-color:var(--navy);color:#fff}
+  .tstep.now .tcircle{background:var(--red);border-color:var(--red);color:#fff}
+  .tline{width:2px;flex:1;background:var(--line-strong);margin:4px 0}
+  .tstep:last-child .tline{display:none}
+  .tbody{padding-bottom:30px}
+  .tbody h4{font-size:17px;font-weight:700;margin-bottom:6px;letter-spacing:-.2px}
+  .tbody p{font-size:14.5px;color:var(--muted);line-height:1.6;max-width:600px}
+  .step-kicker{display:block;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--red);margin-bottom:3px}
+  .ttag{display:inline-flex;align-items:center;gap:6px;margin-top:11px;font-size:12.5px;font-weight:600;color:var(--navy);background:var(--tint);padding:5px 12px;border-radius:20px}
+  .ttag.live{color:var(--red);background:var(--red-soft)}
+  .ttag .ic{font-size:14px}
+  .step-link{display:inline-flex;align-items:center;gap:6px;margin-top:13px;margin-left:2px;font-family:inherit;font-size:13.5px;font-weight:600;color:var(--navy);background:none;border:none;cursor:pointer;padding:0;transition:gap .18s,color .18s}
+  .step-link .ic{font-size:15px}
+  .step-link:hover{color:var(--red);gap:10px}
+  .tbody .ttag + .step-link{margin-left:12px}
+
+  .fazit{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-sm);padding:32px;margin-top:14px}
+  .fazit h3{font-family:'Fraunces',serif;font-weight:500;font-size:24px;margin-bottom:18px;letter-spacing:-.3px}
+  .rank{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
+  .rank:last-of-type{border-bottom:none}
+  .rnum{font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--navy);line-height:1;width:30px;flex-shrink:0}
+  .rank .rt b{font-size:15px;font-weight:700}
+  .rank .rt p{font-size:14px;color:var(--muted);margin-top:3px}
+
+  /* ── RECHNER SUB-TABS ── */
+  .subtabs{display:flex;gap:12px;flex-wrap:wrap}
+  .subtab{display:flex;align-items:center;gap:13px;flex:1;min-width:250px;text-align:left;padding:15px 18px;border:1.5px solid var(--line-strong);border-radius:var(--r-md);background:var(--surface);cursor:pointer;font-family:inherit;transition:border-color .18s,background .18s,box-shadow .18s,transform .18s}
+  .subtab:hover{border-color:var(--navy);background:var(--tint);transform:translateY(-1px)}
+  .subtab.active{border-color:var(--navy);background:var(--navy);box-shadow:var(--sh-md)}
+  .subtab-ic{width:44px;height:44px;border-radius:11px;background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;transition:background .18s,color .18s}
+  .subtab.active .subtab-ic{background:rgba(255,255,255,.16);color:#fff}
+  .subtab-t b{display:block;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.25}
+  .subtab-t small{font-size:12.5px;color:var(--muted)}
+  .subtab.active .subtab-t b{color:#fff}
+  .subtab.active .subtab-t small{color:rgba(255,255,255,.82)}
+  .subpanel{display:none}
+  .subpanel.active{display:block;animation:fade .4s ease}
+  #rechnerTop{scroll-margin-top:74px}
+
+  /* ── CALCULATOR ── */
+  .calc-shell{display:grid;grid-template-columns:340px 1fr;gap:24px;align-items:start}
+  @media(max-width:900px){.calc-shell{grid-template-columns:1fr}}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-sm)}
+  .panel-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:11px}
+  .panel-head .ic{font-size:20px;color:var(--navy)}
+  .panel-head h3{font-size:16px;font-weight:700}
+  .panel-head p{font-size:12.5px;color:var(--muted);margin-top:1px}
+  .panel-body{padding:22px}
+  .form-section-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:4px 0 14px}
+  .form-section-label:not(:first-child){margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--ink)}
+  .field input,.field select{
+    width:100%;padding:11px 13px;font-family:inherit;font-size:14.5px;color:var(--ink);
+    background:var(--surface);border:1.5px solid var(--line-strong);border-radius:var(--r-sm);
+    outline:none;transition:border-color .18s,box-shadow .18s;
+  }
+  .field input:focus,.field select:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(226,0,26,.12)}
+  .field .hint{font-size:12px;color:var(--muted);margin-top:5px}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .switch-field{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border:1.5px solid var(--line-strong);border-radius:var(--r-sm);cursor:pointer;transition:border-color .18s,background .18s}
+  .switch-field:hover{border-color:var(--navy)}
+  .switch-field .sf-text{font-size:14px;font-weight:600;cursor:pointer}
+  .toggle{position:relative;display:inline-block;width:42px;height:24px;flex-shrink:0;cursor:pointer}
+  .toggle input{opacity:0;width:0;height:0;position:absolute}
+  .toggle .track{position:absolute;inset:0;background:var(--line-strong);border-radius:20px;transition:background .2s}
+  .toggle .thumb{position:absolute;top:3px;left:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+  .toggle input:checked ~ .track{background:var(--navy)}
+  .toggle input:checked ~ .track + .thumb{transform:translateX(18px)}
+  .calc-btn{width:100%;margin-top:20px;justify-content:center}
+  .reassure{font-size:12.5px;color:var(--muted);text-align:center;margin-top:11px;line-height:1.45}
+
+  /* results */
+  .results-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:6px}
+  .results-head .ic{font-size:20px;color:var(--navy)}
+  .cmp-list{display:flex;flex-direction:column}
+  .cmp-head{display:grid;grid-template-columns:1.7fr .9fr 1.2fr 104px;gap:18px;padding:2px 0 11px;border-bottom:2px solid var(--line-strong)}
+  .cmp-head > div{font-size:11px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--muted)}
+  .cmp-head > div:nth-child(3),.cmp-head > div:nth-child(4){text-align:right}
+  .cmp-group-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--tint);border-radius:8px;padding:9px 14px;margin:16px 0 0}
+  .cmp-group-head h4{font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.7px;margin:0}
+  .cmp-group-head span{font-size:12px;color:var(--muted)}
+  .cmp-row{
+    display:grid;grid-template-columns:1.7fr .9fr 1.2fr 104px;gap:18px;align-items:center;
+    padding:18px 0;border-bottom:1px solid var(--line);
+  }
+  .cmp-group .cmp-row:last-child{border-bottom:none}
+  .cmp-name{display:flex;gap:13px;align-items:flex-start}
+  .cmp-ic{width:40px;height:40px;border-radius:10px;background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0}
+  .cmp-name b{font-size:15px;font-weight:700;letter-spacing:-.2px;display:block;margin-bottom:3px}
+  .cmp-name p{font-size:13px;color:var(--muted);line-height:1.5}
+  .cmp-prio{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--muted)}
+  .cmp-money{text-align:right}
+  .cmp-money .amt{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--ink)}
+  .cmp-money .amt small{font-size:13px;font-weight:500;color:var(--muted)}
+  .cmp-money .mkt{font-size:12px;color:var(--muted);margin-top:3px}
+  .cmp-money .incl{font-family:'Schibsted Grotesk';font-size:14px;font-weight:600;color:var(--ok)}
+  .bar{height:5px;background:var(--line);border-radius:4px;margin-top:8px;overflow:hidden}
+  .bar > i{display:block;height:100%;background:var(--navy);border-radius:4px;transition:width .5s ease}
+  .cmp-toggle{display:flex;justify-content:flex-end;align-items:center}
+  .cmp-toggle .pill{font-size:11px;font-weight:600;color:var(--ok);background:var(--ok-soft);padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .bgt-presets{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .bgt-chip{font-family:inherit;font-size:13px;font-weight:600;color:var(--navy);background:var(--surface);border:1px solid var(--line-strong);padding:7px 13px;border-radius:20px;cursor:pointer;transition:all .18s}
+  .bgt-chip:hover{background:var(--tint);border-color:var(--navy)}
+  .budget-note{border-radius:12px;padding:13px 15px;margin-bottom:14px;font-size:13.5px;line-height:1.5;display:none}
+  .budget-note.show{display:block}
+  .budget-note.ok{background:var(--ok-soft);color:#0c5a33;border:1px solid #bfe3cd}
+  .budget-note.warn{background:var(--amber-soft);color:#7a4e08;border:1px solid #e7d3a8}
+  .budget-note b{font-weight:700}
+  .budget-note .bn-names{margin-top:4px}
+  .cmp-row.over{opacity:.6}
+  .badge-over{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.2px;background:var(--amber-soft);color:var(--amber);border-radius:20px;padding:2px 8px;margin-left:7px;vertical-align:middle}
+  .cmp-collabel{display:none}
+
+  @media(max-width:620px){
+    .cmp-head{display:none}
+    .cmp-row{grid-template-columns:1fr;gap:7px;padding:18px 0}
+    .cmp-money{text-align:left}
+    .cmp-toggle{justify-content:flex-start}
+    .cmp-collabel{display:block;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  }
+
+  .summary{
+    margin-top:6px;background:var(--navy);color:#fff;border-radius:var(--r-lg);overflow:hidden;
+    box-shadow:var(--sh-md);
+  }
+  .summary-main{padding:26px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:18px}
+  .summary-main .label{font-size:13px;opacity:.85;margin-bottom:6px;letter-spacing:.3px}
+  .summary-main .big{font-family:'Fraunces',serif;font-size:46px;font-weight:600;line-height:1}
+  .summary-main .big small{font-size:20px;opacity:.85}
+  .summary-main .yr{font-size:13.5px;opacity:.85;margin-top:8px}
+  .summary-side{text-align:right}
+  .summary-side .count{font-size:13px;opacity:.85}
+  .summary-foot{background:rgba(255,255,255,.1);padding:14px 26px;display:flex;align-items:center;gap:9px;font-size:12.5px;opacity:.95}
+  .summary-foot .ic{font-size:15px}
+  .summary-cta{margin-top:14px}
+
+  .disclaimer{font-size:12px;color:var(--muted);margin-top:18px;display:flex;gap:8px;align-items:flex-start}
+  .disclaimer .ic{font-size:15px;flex-shrink:0;margin-top:1px}
+
+  /* ── BESTANDSAUFNAHME ── */
+  .inv-shell{display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:start}
+  @media(max-width:900px){.inv-shell{grid-template-columns:1fr}}
+  .scan-zone{padding:18px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+  .scan-opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:13px 15px;border:1.5px solid var(--line-strong);border-radius:var(--r-md);background:var(--surface);cursor:pointer;transition:border-color .18s,background .18s,transform .18s}
+  .scan-opt:hover{border-color:var(--navy);background:var(--tint);transform:translateY(-1px)}
+  .scan-opt.primary{background:var(--navy);border-color:var(--navy)}
+  .scan-opt.primary:hover{background:var(--navy-700)}
+  .scan-opt.primary .so-ic{background:rgba(255,255,255,.16);color:#fff}
+  .scan-opt.primary .so-t b{color:#fff}
+  .scan-opt.primary .so-t span{color:rgba(255,255,255,.82)}
+  .scan-opt.primary .so-arrow{color:rgba(255,255,255,.7)}
+  .so-ic{width:42px;height:42px;border-radius:10px;background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0}
+  .so-t{flex:1;min-width:0}
+  .so-t b{display:block;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:2px;line-height:1.25}
+  .so-t span{font-size:12.3px;color:var(--muted);line-height:1.4}
+  .so-arrow{font-size:18px;color:var(--muted);flex-shrink:0}
+  .scan-status{margin-top:4px;font-size:13px;font-weight:600;color:var(--navy);display:none;align-items:center;justify-content:center;gap:9px;text-align:center;line-height:1.4;padding:4px 6px}
+  .scan-status.show{display:flex}
+  .scan-status.err{color:var(--red)}
+  .scan-status.demo{color:#8a5d00}
+  .spinner{width:16px;height:16px;border:2px solid var(--line-strong);border-top-color:var(--navy);border-radius:50%;animation:spin .8s linear infinite;flex-shrink:0}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .or-divide{display:flex;align-items:center;gap:12px;margin:4px 0 16px;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.5px}
+  .or-divide::before,.or-divide::after{content:"";flex:1;height:1px;background:var(--line)}
+  .quick-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:20px 0 11px}
+  .quick-chips{display:flex;flex-wrap:wrap;gap:8px}
+  .qchip{font-family:inherit;font-size:13px;font-weight:500;color:var(--navy);background:var(--surface);border:1px solid var(--line-strong);padding:7px 12px;border-radius:8px;cursor:pointer;transition:all .16s;display:inline-flex;align-items:center;gap:6px}
+  .qchip:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .qchip .ic{font-size:14px}
+  .add-row{display:grid;grid-template-columns:1fr;gap:10px}
+
+  .inv-list{display:flex;flex-direction:column}
+  .inv-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);animation:fade .35s ease}
+  .inv-item:last-child{border-bottom:none}
+  .inv-ic{width:40px;height:40px;border-radius:10px;background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+  .inv-item .info{flex:1;min-width:0}
+  .inv-item .info b{font-size:14.5px;font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .inv-item .info span{font-size:12.5px;color:var(--muted)}
+  .inv-item .val{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--ink);white-space:nowrap}
+  .inv-del{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;transition:all .16s}
+  .inv-del:hover{border-color:var(--red);color:var(--red);background:var(--red-soft)}
+  /* Scan-Detail-Badges + Wertspanne */
+  .itags{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+  .itag{font-size:10.5px;font-weight:700;letter-spacing:.2px;padding:2px 7px;border-radius:20px;background:var(--tint);color:var(--navy);text-transform:capitalize;line-height:1.55}
+  .itag.ok{background:var(--ok-soft);color:var(--ok)}
+  .itag.warn{background:#fdeaea;color:var(--red)}
+  .itag.neu{background:#f0eeee;color:var(--muted)}
+  .itag.auth{background:#fff3da;color:#8a5d00;text-transform:none;cursor:help}
+  .itag.demo{background:#e9eefc;color:#2a3fa0;text-transform:none;cursor:help}
+  .itag.cf-hi{background:var(--ok-soft);color:var(--ok);text-transform:none;cursor:help}
+  .itag.cf-md{background:#fff3da;color:#8a5d00;text-transform:none;cursor:help}
+  .itag.cf-lo{background:#fdeaea;color:var(--red);text-transform:none;cursor:help}
+  .irange{display:block;font-family:'Schibsted Grotesk',sans-serif;font-size:10.5px;font-weight:600;color:var(--muted);margin-top:2px;text-align:right;white-space:nowrap}
+  /* Video-Dropzone */
+  .video-zone{display:flex;align-items:center;gap:14px;width:100%;padding:13px 15px;border:1.5px dashed var(--line-strong);border-radius:var(--r-md);background:var(--surface);cursor:pointer;transition:border-color .18s,background .18s,transform .18s}
+  .video-zone:hover{border-color:var(--navy);background:var(--tint);transform:translateY(-1px)}
+  .video-zone.drag{border-color:var(--navy);background:var(--tint);border-style:solid;transform:translateY(-1px)}
+  /* Marken-Autocomplete */
+  .brand-list{position:absolute;top:100%;left:0;right:0;z-index:40;background:#fff;border:1px solid var(--line-strong);border-radius:10px;box-shadow:var(--sh-md);margin-top:4px;max-height:216px;overflow-y:auto;display:none}
+  .brand-list.show{display:block}
+  .brand-list button{display:block;width:100%;text-align:left;padding:9px 13px;font-family:inherit;font-size:13.5px;font-weight:500;color:var(--ink);background:none;border:none;border-bottom:1px solid var(--line);cursor:pointer;transition:background .12s}
+  .brand-list button:last-child{border-bottom:none}
+  .brand-list button:hover{background:var(--tint);color:var(--navy)}
+  .brand-none{padding:10px 13px;font-size:12.5px;color:var(--muted)}
+  /* Link-Eingabe */
+  .link-row{display:flex;gap:9px;align-items:stretch}
+  .link-row input{flex:1;min-width:0;font-family:inherit;font-size:14px;color:var(--ink);background:var(--surface);border:1.5px solid var(--line-strong);border-radius:var(--r-md);padding:11px 14px}
+  .link-row input:focus{border-color:var(--navy);outline:none;box-shadow:0 0 0 3px rgba(226,0,26,.12)}
+  .link-btn{flex-shrink:0;padding:0 16px;white-space:nowrap}
+  .inv-empty{text-align:center;padding:42px 20px;color:var(--muted)}
+  .inv-empty .ic{font-size:38px;color:var(--line-strong);margin-bottom:12px}
+  .inv-empty b{display:block;font-size:15px;color:var(--ink);font-weight:600;margin-bottom:5px}
+  .inv-empty p{font-size:13.5px;max-width:280px;margin:0 auto;line-height:1.5}
+
+  .inv-total{margin-top:6px;background:var(--navy);color:#fff;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md)}
+  .inv-total-main{padding:24px 26px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .inv-total-main .label{font-size:13px;opacity:.85;margin-bottom:6px}
+  .inv-total-main .big{font-family:'Fraunces',serif;font-size:40px;font-weight:600;line-height:1}
+  .inv-total-main .big small{font-size:18px;opacity:.85}
+  .inv-total-main .cnt{font-size:13px;opacity:.85;margin-top:7px}
+
+  /* ── CHAT ── */
+  .chat-shell{max-width:720px;margin:0 auto}
+  .chips{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}
+  .chip{font-family:inherit;font-size:13px;font-weight:500;color:var(--navy);background:var(--surface);border:1px solid var(--line-strong);padding:8px 14px;border-radius:20px;cursor:pointer;transition:all .18s}
+  .chip:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .chatbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-sm);overflow:hidden}
+  .chat-bar{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:11px}
+  .chat-bar .av{width:34px;height:34px;border-radius:9px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px}
+  .chat-bar b{font-size:14.5px;font-weight:700;display:block}
+  .chat-bar span{font-size:12px;color:var(--ok);display:flex;align-items:center;gap:5px}
+  .chat-bar span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok)}
+  .chat-win{height:400px;overflow-y:auto;padding:22px;background:linear-gradient(180deg,#fbfcfe,#f6f8fc);scroll-behavior:smooth}
+  .m-row{display:flex;gap:11px;margin-bottom:16px;align-items:flex-end}
+  .m-row.user{flex-direction:row-reverse}
+  .m-av{width:30px;height:30px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .m-av.bot{background:var(--navy);color:#fff}
+  .m-av.user{background:var(--red);color:#fff}
+  .bubble{max-width:76%;padding:12px 15px;font-size:14px;line-height:1.6;border-radius:14px}
+  .bubble.bot{background:var(--surface);border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:4px}
+  .bubble.user{background:var(--navy);color:#fff;border-bottom-right-radius:4px}
+  .typing{display:none;gap:11px;margin-bottom:16px;align-items:flex-end}
+  .typing.show{display:flex}
+  .tdots{background:var(--surface);border:1px solid var(--line);border-radius:14px;border-bottom-left-radius:4px;padding:14px 16px;display:flex;gap:5px}
+  .tdots i{width:7px;height:7px;background:var(--muted);border-radius:50%;animation:bd 1.3s infinite}
+  .tdots i:nth-child(2){animation-delay:.2s}.tdots i:nth-child(3){animation-delay:.4s}
+  @keyframes bd{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-6px);opacity:1}}
+  .chat-input-bar{display:flex;gap:10px;padding:16px 20px;border-top:1px solid var(--line);background:var(--surface)}
+  .chat-input-bar input{flex:1;padding:12px 15px;font-family:inherit;font-size:14px;border:1.5px solid var(--line-strong);border-radius:24px;outline:none;transition:border-color .18s}
+  .chat-input-bar input:focus{border-color:var(--navy)}
+  .send-btn{width:44px;height:44px;border-radius:50%;border:none;background:var(--navy);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .18s,transform .18s}
+  .send-btn:hover{background:var(--navy-700);transform:scale(1.05)}
+  .chat-win::-webkit-scrollbar{width:5px}
+  .chat-win::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:4px}
+
+  /* ── FOOTER ── */
+  footer{background:var(--navy-900);color:rgba(255,255,255,.78);margin-top:30px;padding:34px 24px}
+  .foot-in{max-width:var(--maxw);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+  .foot-brand{display:flex;align-items:center;gap:9px}
+  .foot-brand .word{font-weight:800;font-size:20px;color:#fff}
+  .foot-brand .sq{width:8px;height:8px;background:var(--red);border-radius:2px;margin-bottom:10px}
+  .foot-in p{font-size:12.5px;max-width:440px;line-height:1.55}
+  .foot-in strong{color:rgba(255,255,255,.85)}
+
+  /* load anim */
+  .ld{opacity:0;animation:rise .7s cubic-bezier(.22,1,.36,1) forwards}
+  .ld-1{animation-delay:.05s}.ld-2{animation-delay:.13s}.ld-3{animation-delay:.21s}.ld-4{animation-delay:.29s}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  .ld{transform:translateY(16px)}
+  /* ── INFORMATIONSSERVICE ── */
+  #infoservice > .wrap{display:flex;flex-direction:column}
+  #infoservice > .wrap > .block-head{order:1}
+  #infoservice > .wrap > .link-cols{order:2}
+  #infoservice > .wrap > .iss-divider{order:3}
+  #infoservice > .wrap > h3.iss-cat{order:4}
+  #infoservice > .wrap > p.iss-sub{order:5}
+  #infoservice > .wrap > .vid-grid{order:6}
+  .iss-cat{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--navy);margin:0 0 4px}
+  .iss-sub{font-size:13.5px;color:var(--muted);margin:0 0 16px}
+  .iss-divider{margin:34px 0 0;border-top:1px solid var(--line)}
+  .vid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:6px}
+  .vid-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm);transition:box-shadow .18s,transform .18s}
+  .vid-card:hover{box-shadow:var(--sh-md);transform:translateY(-2px)}
+  .vid-frame{position:relative;display:block;width:100%;aspect-ratio:16/9;background:#0b1020;overflow:hidden}
+  .vid-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(226,0,26,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);transition:transform .18s,background .18s}
+  .vid-frame:hover .vid-play{transform:translate(-50%,-50%) scale(1.08);background:var(--red)}
+  .vid-play svg{width:22px;height:22px;margin-left:3px;fill:#fff}
+  .vid-meta{padding:13px 15px}
+  .vid-meta b{display:block;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:6px}
+  .vid-meta a{font-size:12.5px;font-weight:600;color:var(--red);text-decoration:none}
+  .vid-meta a:hover{text-decoration:underline}
+  .link-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:8px}
+  .link-card{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:13px 15px;margin-bottom:11px;text-decoration:none;transition:border-color .18s,background .18s,transform .18s,box-shadow .18s}
+  .link-card:hover{border-color:var(--navy);background:var(--tint);transform:translateX(2px);box-shadow:var(--sh-sm)}
+  .link-logo{width:38px;height:38px;border-radius:9px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;letter-spacing:-.5px}
+  .link-card .lc-t{flex:1;min-width:0}
+  .link-card .lc-name{display:block;font-size:14.5px;font-weight:700;color:var(--ink)}
+  .link-card .lc-host{display:block;font-size:12px;color:var(--muted)}
+  .link-card .lc-arrow{color:var(--muted);flex-shrink:0}
+  .link-card:hover .lc-arrow{color:var(--navy)}
+
+  /* ── QUELLEN ── */
+  .src-block{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--navy);border-radius:var(--r-md);padding:20px 22px;margin-bottom:16px}
+  .src-block.warn{border-left-color:var(--red)}
+  .src-block h3{font-size:15.5px;font-weight:700;margin-bottom:6px}
+  .src-block p{font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:8px}
+  .src-block p:last-child{margin-bottom:0}
+  .src-block ul{margin:6px 0 0;padding-left:18px}
+  .src-block li{font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:4px}
+  .src-block a{color:var(--navy);font-weight:600}
+  .src-links{margin-top:8px!important;list-style:none;padding-left:0!important}
+  .src-links li{font-size:13px;margin-bottom:5px}
+  /* Schnellschätzung nach Haushalts-Niveau */
+  .niveau{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--surface);margin-top:2px}
+  .niveau-head{display:flex;flex-direction:column;gap:3px;margin-bottom:12px}
+  .niveau-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--navy)}
+  .niveau-head b{font-family:'Fraunces',serif;font-size:1.08rem;color:var(--ink)}
+  .niveau-sub{font-size:.86rem;color:var(--muted);line-height:1.45}
+  .niveau-flabel{display:flex;align-items:center;justify-content:space-between;font-size:.86rem;font-weight:600;color:var(--ink);margin-bottom:10px}
+  .niveau-finput{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--muted)}
+  .niveau-finput input{width:78px;padding:7px 9px;border:1px solid var(--line);border-radius:9px;font:inherit;text-align:right;color:var(--ink)}
+  .niveau-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .niv-tier{display:flex;flex-direction:column;gap:3px;text-align:left;padding:11px;border:1.5px solid var(--line);border-radius:11px;background:var(--surface);cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s}
+  .niv-tier:hover{border-color:var(--navy)}
+  .niv-tier.sel{border-color:var(--navy);background:var(--tint);box-shadow:var(--sh-sm)}
+  .niv-name{font-weight:700;color:var(--ink);font-size:.92rem}
+  .niv-desc{font-size:.74rem;color:var(--muted);line-height:1.35;min-height:2.6em}
+  .niv-rate{font-size:.74rem;color:var(--muted)}
+  .niv-sum{font-weight:700;color:var(--navy);font-size:1rem;margin-top:2px}
+  .niveau-result{margin-top:12px}
+  .niv-res-row{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.88rem;color:var(--ink)}
+  .niv-res-val{font-size:1.25rem;color:var(--navy);font-family:'Fraunces',serif;white-space:nowrap}
+  .niv-take{width:100%;margin-top:10px}
+  .niv-note{font-size:.76rem;color:var(--muted);line-height:1.45;margin:8px 0 0}
+  @media(max-width:560px){.niveau-tiers{grid-template-columns:1fr}.niv-desc{min-height:0}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-in">
+    <div class="brand" onclick="go('home')">
+      <span class="word">ERGO</span><span class="sq"></span>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-s="home" onclick="go('home')">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M9.5 21v-6h5v6"/></svg>
+        <span class="tab-labels">Übersicht</span>
+      </button>
+      <button class="tab" data-s="journey" onclick="go('journey')">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h12M8 12h12M8 18h12"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg>
+        <span class="tab-labels">Infos</span>
+      </button>
+      <button class="tab" data-s="rechner" onclick="go('rechner')">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6"/><path d="M9 11h.01M12 11h.01M15 11h.01M9 14h.01M12 14h.01M15 14h.01M9 17h3"/></svg>
+        <span class="tab-labels">Rechner</span>
+      </button>
+      <button class="tab" data-s="chat" onclick="go('chat')">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 3.5V6a1 1 0 0 1 1-1Z"/></svg>
+        <span class="tab-labels">Berater</span>
+      </button>
+      <button class="tab" data-s="quellen" onclick="go('quellen')">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5Z"/><path d="M14 3v5h5M8 13h8M8 17h6"/></svg>
+        <span class="tab-labels">Quellen</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════ HOME ══════ -->
+<section id="home" class="section active">
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-in">
+        <div>
+          <div class="eyebrow ld ld-1">Ratgeber für den ersten eigenen Haushalt</div>
+          <h1 class="ld ld-2">Die erste eigene Wohnung — und der <span class="accent">passende Schutz</span> dazu.</h1>
+          <p class="sub ld ld-3">Welche Versicherungen brauchst du beim Auszug wirklich? Verschaffe dir einen klaren Überblick, vergleiche alle Tarife und berechne deinen persönlichen Beitrag.</p>
+          <div class="cta-row ld ld-4">
+            <button class="btn btn-ghost" onclick="go('journey')">Infos &amp; Videos</button>
+            <button class="btn btn-primary" onclick="goCalc('beitrag')">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h.01M12 11h.01M15 11h.01M9 14h3"/></svg>
+              Beitrag berechnen
+            </button>
+          </div>
+          <div class="hero-meta ld ld-4">
+            <div class="m"><b>6</b><span>Versicherungen im Vergleich</span></div>
+            <div class="m"><b>~60 s</b><span>für deine Beitragsschätzung</span></div>
+            <div class="m"><b>ab 3 €</b><span>im Monat für den Basisschutz</span></div>
+          </div>
+        </div>
+        <div class="hero-card ld ld-3">
+          <div class="hc-illu">
+            <svg viewBox="0 0 400 200" width="100%" role="img" aria-label="Junge Person mit Smartphone in der ersten eigenen Wohnung">
+              <defs>
+                <linearGradient id="heroBgPeach" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE7D3"/><stop offset="1" stop-color="#FFF6EF"/></linearGradient>
+                <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CBE7F5"/><stop offset="1" stop-color="#EAF7FD"/></linearGradient>
+              </defs>
+              <rect x="0" y="0" width="400" height="200" fill="url(#heroBgPeach)"/>
+              <rect x="0" y="153" width="400" height="47" fill="#F3DAC2"/>
+              <line x1="0" y1="153" x2="400" y2="153" stroke="#E9CBB0" stroke-width="2"/>
+              <ellipse cx="232" cy="180" rx="140" ry="15" fill="#FBD49B"/>
+              <rect x="30" y="38" width="86" height="80" rx="8" fill="#FFFFFF" stroke="#ECDCCC" stroke-width="3"/>
+              <rect x="38" y="46" width="70" height="64" rx="4" fill="url(#heroSky)"/>
+              <circle cx="94" cy="62" r="8" fill="#FFD06B"/>
+              <ellipse cx="56" cy="60" rx="12" ry="6" fill="#FFFFFF" opacity="0.85"/>
+              <ellipse cx="66" cy="62" rx="9" ry="5" fill="#FFFFFF" opacity="0.85"/>
+              <line x1="73" y1="46" x2="73" y2="110" stroke="#FFFFFF" stroke-width="4"/>
+              <line x1="38" y1="78" x2="108" y2="78" stroke="#FFFFFF" stroke-width="4"/>
+              <rect x="26" y="116" width="94" height="7" rx="2" fill="#EFDECE"/>
+              <path d="M52 116 q-6 -14 2 -22 q6 8 0 22 z" fill="#36A98A"/>
+              <path d="M52 116 q8 -12 16 -12 q-2 10 -12 12 z" fill="#41C198"/>
+              <rect x="46" y="116" width="14" height="9" rx="2" fill="#E58A56"/>
+              <circle cx="340" cy="50" r="30" fill="#FFFFFF"/>
+              <circle cx="340" cy="50" r="30" fill="none" stroke="#FCE0E4" stroke-width="2"/>
+              <path d="M340 34 l16 6 v10 c0 11 -8 18 -16 22 c-8 -4 -16 -11 -16 -22 v-10 z" fill="#e2001a"/>
+              <path d="M333 50 l5 5 l10 -11" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="166" y="110" width="150" height="36" rx="13" fill="#41B7A1"/>
+              <rect x="156" y="126" width="18" height="40" rx="9" fill="#2F9583"/>
+              <rect x="308" y="126" width="18" height="40" rx="9" fill="#2F9583"/>
+              <rect x="160" y="138" width="162" height="28" rx="10" fill="#37A492"/>
+              <rect x="172" y="132" width="68" height="16" rx="7" fill="#4ABFA9"/>
+              <rect x="244" y="132" width="68" height="16" rx="7" fill="#4ABFA9"/>
+              <rect x="172" y="164" width="8" height="9" rx="2" fill="#2A8676"/>
+              <rect x="304" y="164" width="8" height="9" rx="2" fill="#2A8676"/>
+              <g transform="rotate(-10 190 126)"><rect x="176" y="114" width="26" height="26" rx="7" fill="#F2855E"/><rect x="176" y="114" width="26" height="26" rx="7" fill="none" stroke="#E06A43" stroke-width="1.5"/></g>
+              <rect x="210" y="140" width="40" height="13" rx="6" fill="#39414F"/>
+              <rect x="214" y="150" width="9" height="18" rx="4" fill="#39414F"/>
+              <rect x="237" y="150" width="9" height="18" rx="4" fill="#39414F"/>
+              <ellipse cx="218" cy="169" rx="8" ry="4" fill="#2B313C"/>
+              <ellipse cx="242" cy="169" rx="8" ry="4" fill="#2B313C"/>
+              <path d="M214 142 q-2 -22 16 -24 q18 2 16 24 z" fill="#F4B63C"/>
+              <rect x="208" y="118" width="9" height="22" rx="4.5" fill="#F2A92A" transform="rotate(12 212 129)"/>
+              <rect x="243" y="118" width="9" height="22" rx="4.5" fill="#F2A92A" transform="rotate(-12 248 129)"/>
+              <rect x="224" y="124" width="14" height="20" rx="3" fill="#2A2F3A"/>
+              <rect x="226" y="127" width="10" height="14" rx="1.5" fill="#e2001a"/>
+              <rect x="226" y="112" width="8" height="7" fill="#F0B083"/>
+              <circle cx="230" cy="100" r="15" fill="#43342B"/>
+              <circle cx="230" cy="104" r="12.5" fill="#F0B083"/>
+              <circle cx="244" cy="104" r="2.4" fill="#F0B083"/>
+              <path d="M362 132 q-3 -20 4 -30 q5 10 -1 30 z" fill="#2FA47F"/>
+              <path d="M362 132 q-12 -10 -10 -24 q12 4 11 24 z" fill="#38C28E"/>
+              <path d="M362 132 q12 -8 12 -22 q-11 5 -10 22 z" fill="#41C198"/>
+              <path d="M350 132 h26 l-3 22 h-20 z" fill="#E58A56"/>
+              <path d="M350 132 h26 l-1 7 h-24 z" fill="#D9743F"/>
+            </svg>
+          </div>
+          <div class="hc-head">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.5 3 8 7 9.5 4-1.5 7-5 7-9.5V6l-7-3Z"/><path d="m9 11.5 2 2 4-4"/></svg>
+            <h3>Für Erstmieter besonders relevant</h3>
+          </div>
+          <div class="hc-row">
+            <div class="hc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M9.5 21v-6h5v6"/></svg></div>
+            <div class="t"><b>Hausratversicherung</b><span>Schützt dein gesamtes Hab und Gut</span></div>
+            <span class="hc-tag tag-high">Sehr wichtig</span>
+          </div>
+          <div class="hc-row">
+            <div class="hc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.5 3 8 7 9.5 4-1.5 7-5 7-9.5V6l-7-3Z"/></svg></div>
+            <div class="t"><b>Privathaftpflicht</b><span>Wenn du anderen Schaden zufügst</span></div>
+            <span class="hc-tag tag-high">Sehr wichtig</span>
+          </div>
+          <div class="hc-row">
+            <div class="hc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M12 8.5v7M8.5 12h7"/></svg></div>
+            <div class="t"><b>Krankenversicherung</b><span>Pflicht – beim Auszug prüfen</span></div>
+            <span class="hc-tag tag-must">Pflicht</span>
+          </div>
+          <div class="hc-foot" onclick="goCalc('beitrag')">
+            <span>Jetzt alle im Rechner vergleichen</span>
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="trust-band">
+      <div class="trust-item">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.5 3 8 7 9.5 4-1.5 7-5 7-9.5V6l-7-3Z"/><path d="m9 11.5 2 2 4-4"/></svg>
+        <span><b>Unverbindlich &amp; kostenlos</b><small>Reine Orientierungshilfe</small></span>
+      </div>
+      <div class="trust-item">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span><b>In unter einer Minute</b><small>Schon mit wenigen Angaben</small></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <div class="eyebrow">Überblick</div>
+        <h2 class="title">Welche Versicherungen sind für dich relevant?</h2>
+        <p class="lead">Sortiert nach Wichtigkeit für junge Menschen, die zum ersten Mal in eine eigene Wohnung ziehen.</p>
+      </div>
+      <div class="grid">
+
+        <div class="icard" onclick="toggleCard(this)">
+          <div class="icard-head">
+            <div class="ibox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M9.5 21v-6h5v6"/></svg></div>
+            <div class="icard-head-main"><h3>Hausratversicherung</h3><p class="icard-intro">Schützt dein Hab und Gut in der Wohnung.</p></div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+          <div class="foot"><div class="prio"><span class="dot high"></span><span class="lbl">Sehr wichtig</span></div><span class="price-from">ab ~4 €/Monat</span></div>
+          <div class="acc-body"><div class="acc-body-inner"><div class="acc-inner">
+            <p class="acc-desc">Ersetzt deine Möbel, Elektronik, Kleidung und Wertsachen, wenn sie durch Einbruch, Feuer, Leitungswasser oder Sturm beschädigt oder gestohlen werden.</p>
+            <p class="acc-sub">Das ist abgedeckt</p>
+            <ul class="acc-list"><li>Einbruchdiebstahl und Vandalismus</li><li>Feuer-, Wasser- und Sturmschäden</li><li>Oft auch Fahrrad und Sachen unterwegs</li></ul>
+            <div class="acc-example"><b>Beispiel aus dem Alltag:</b> Bei einem Wohnungsbrand werden Sofa, Laptop und Kleidung zerstört – die Hausrat ersetzt den Neuwert.</div>
+            <button class="btn btn-primary acc-cta" onclick="event.stopPropagation();goCalc('beitrag')">Beitrag berechnen</button>
+          </div></div></div>
+        </div>
+
+        <div class="icard" onclick="toggleCard(this)">
+          <div class="icard-head">
+            <div class="ibox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.5 3 8 7 9.5 4-1.5 7-5 7-9.5V6l-7-3Z"/><path d="m9 11.5 2 2 4-4"/></svg></div>
+            <div class="icard-head-main"><h3>Privathaftpflicht</h3><p class="icard-intro">Zahlt, wenn du anderen aus Versehen Schaden zufügst.</p></div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+          <div class="foot"><div class="prio"><span class="dot high"></span><span class="lbl">Sehr wichtig</span></div><span class="price-from">ab ~3 €/Monat</span></div>
+          <div class="acc-body"><div class="acc-body-inner"><div class="acc-inner">
+            <p class="acc-desc">Eine der wichtigsten Versicherungen überhaupt. Sie übernimmt Schäden, die du anderen Personen oder deren Eigentum versehentlich zufügst – bis in Millionenhöhe.</p>
+            <p class="acc-sub">Das ist abgedeckt</p>
+            <ul class="acc-list"><li>Personen- und Sachschäden an Dritten</li><li>Schäden in der Mietwohnung</li><li>Oft Schlüsselverlust inklusive</li></ul>
+            <div class="acc-example"><b>Beispiel aus dem Alltag:</b> Du rempelst jemanden an, dessen Handy fällt und zerbricht – die Privathaftpflicht zahlt den Schaden.</div>
+            <button class="btn btn-primary acc-cta" onclick="event.stopPropagation();goCalc('beitrag')">Beitrag berechnen</button>
+          </div></div></div>
+        </div>
+
+        <div class="icard" onclick="toggleCard(this)">
+          <div class="icard-head">
+            <div class="ibox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="3.5"/><path d="m10 13 7-7"/><path d="m14.5 5.5 2 2"/><path d="m17 3 2.5 2.5L17 8"/></svg></div>
+            <div class="icard-head-main"><h3>Mieterhaftpflicht</h3><p class="icard-intro">Schäden an der gemieteten Wohnung selbst.</p></div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+          <div class="foot"><div class="prio"><span class="dot high"></span><span class="lbl">Sehr wichtig</span></div><span class="price-from">meist inklusive</span></div>
+          <div class="acc-body"><div class="acc-body-inner"><div class="acc-inner">
+            <p class="acc-desc">Deckt Schäden an der Wohnung, die du gemietet hast – etwa am Boden oder an fest verbauten Teilen. In den meisten Privathaftpflicht-Tarifen ist dieser Schutz bereits enthalten.</p>
+            <p class="acc-sub">Das ist abgedeckt</p>
+            <ul class="acc-list"><li>Schäden am Bodenbelag und an Wänden</li><li>Schäden an fest verbauten Installationen</li><li>Meist Teil der Privathaftpflicht</li></ul>
+            <div class="acc-example"><b>Beispiel aus dem Alltag:</b> Ein heruntergefallenes Bügeleisen hinterlässt einen Brandfleck im Parkett – das ist ein Mietsachschaden.</div>
+            <button class="btn btn-primary acc-cta" onclick="event.stopPropagation();goCalc('beitrag')">Beitrag berechnen</button>
+          </div></div></div>
+        </div>
+
+        <div class="icard" onclick="toggleCard(this)">
+          <div class="icard-head">
+            <div class="ibox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M12 8.5v7M8.5 12h7"/></svg></div>
+            <div class="icard-head-main"><h3>Krankenversicherung</h3><p class="icard-intro">In Deutschland Pflicht – gesetzlich oder privat.</p></div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+          <div class="foot"><div class="prio"><span class="dot must"></span><span class="lbl">Pflicht</span></div><span class="price-from">einkommensabhängig</span></div>
+          <div class="acc-body"><div class="acc-body-inner"><div class="acc-inner">
+            <p class="acc-desc">Jeder in Deutschland muss krankenversichert sein. Oft bist du bis zu einem bestimmten Alter kostenlos über die Familienversicherung deiner Eltern abgesichert – das endet aber je nach Alter, Einkommen und Studienstatus.</p>
+            <p class="acc-sub">Worauf du achten solltest</p>
+            <ul class="acc-list"><li>Pflicht für alle in Deutschland</li><li>Familienversicherung endet je nach Alter, Einkommen und Studium</li><li>Als Azubi oder Berufseinsteiger zahlst du selbst</li></ul>
+            <div class="acc-example"><b>Beispiel aus dem Alltag:</b> Mit Beginn der Ausbildung wirst du eigenständig versichert – der Beitrag wird direkt vom Lohn abgezogen.</div>
+            <button class="btn btn-primary acc-cta" onclick="event.stopPropagation();goCalc('beitrag')">Beitrag berechnen</button>
+          </div></div></div>
+        </div>
+
+        <div class="icard" onclick="toggleCard(this)">
+          <div class="icard-head">
+            <div class="ibox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 1 9 9H3a9 9 0 0 1 9-9Z"/><path d="M12 12v6.5a2.5 2.5 0 0 0 5 0"/></svg></div>
+            <div class="icard-head-main"><h3>Berufsunfähigkeit</h3><p class="icard-intro">Sichert dein Einkommen, wenn du nicht mehr arbeiten kannst.</p></div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+          <div class="foot"><div class="prio"><span class="dot high"></span><span class="lbl">Wichtig fürs Leben</span></div><span class="price-from">ab ~20 €/Monat</span></div>
+          <div class="acc-body"><div class="acc-body-inner"><div class="acc-inner">
+            <p class="acc-desc">Wenn du aus gesundheitlichen Gründen deinen Beruf nicht mehr ausüben kannst, zahlt diese Versicherung eine monatliche Rente. Je jünger und gesünder du beim Abschluss bist, desto günstiger der Beitrag.</p>
+            <p class="acc-sub">Das ist abgedeckt</p>
+            <ul class="acc-list"><li>Monatliche Rente bei Berufsunfähigkeit</li><li>Schutz unabhängig von der Ursache</li><li>Günstiger Einstieg in jungen Jahren</li></ul>
+            <div class="acc-example"><b>Beispiel aus dem Alltag:</b> Nach einem Unfall kannst du deinen Beruf dauerhaft nicht mehr ausüben – die BU zahlt dir eine monatliche Rente.</div>
+            <button class="btn btn-primary acc-cta" onclick="event.stopPropagation();goCalc('beitrag')">Beitrag berechnen</button>
+          </div></div></div>
+        </div>
+
+        <div class="icard" onclick="toggleCard(this)">
+          <div class="icard-head">
+            <div class="ibox"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m5 7-2.5 5a3 3 0 0 0 5 0L5 7Z"/><path d="m19 7-2.5 5a3 3 0 0 0 5 0L19 7Z"/><path d="M8.5 21h7"/></svg></div>
+            <div class="icard-head-main"><h3>Rechtsschutz</h3><p class="icard-intro">Übernimmt Anwalts- und Gerichtskosten.</p></div>
+            <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+          <div class="foot"><div class="prio"><span class="dot mid"></span><span class="lbl">Empfehlenswert</span></div><span class="price-from">ab ~8 €/Monat</span></div>
+          <div class="acc-body"><div class="acc-body-inner"><div class="acc-inner">
+            <p class="acc-desc">Hilft bei rechtlichem Streit – zum Beispiel mit dem Vermieter über die Kaution oder die Nebenkostenabrechnung. Oft modular aufgebaut, sodass du nur die Bausteine wählst, die du brauchst.</p>
+            <p class="acc-sub">Das ist abgedeckt</p>
+            <ul class="acc-list"><li>Anwalts-, Gerichts- und Gutachterkosten</li><li>Miet-, Arbeitsrecht und mehr</li><li>Modular kombinierbar</li></ul>
+            <div class="acc-example"><b>Beispiel aus dem Alltag:</b> Dein Vermieter zahlt die Kaution nicht zurück – der Rechtsschutz übernimmt die Anwaltskosten.</div>
+            <button class="btn btn-primary acc-cta" onclick="event.stopPropagation();goCalc('beitrag')">Beitrag berechnen</button>
+          </div></div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="block-head">
+        <div class="eyebrow">Gut zu wissen</div>
+        <h2 class="title">Worauf du als Erstmieter achten solltest</h2>
+      </div>
+      <div class="tips">
+        <div class="tip">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 16.5h4"/></svg>
+          <h4>Vor dem Einzug</h4>
+          <ul><li>Übergabeprotokoll geben lassen</li><li>Schäden sofort mit Fotos dokumentieren</li><li>Schützt später deine Kaution</li></ul>
+        </div>
+        <div class="tip">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="3.5"/><path d="m10 13 7-7"/><path d="m14.5 5.5 2 2"/><path d="m17 3 2.5 2.5L17 8"/></svg>
+          <h4>Schlüsselverlust</h4>
+          <ul><li>Verlorener Schlüssel wird schnell teuer</li><li>Oft muss die Schließanlage getauscht werden</li><li>Viele Privathaftpflicht-Tarife übernehmen die Kosten</li></ul>
+        </div>
+        <div class="tip">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11Z"/></svg>
+          <h4>Wasserschäden</h4>
+          <ul><li>Eine der häufigsten Schadensursachen</li><li>Z. B. defekte Waschmaschine oder Rohrbruch</li><li>Hausrat ersetzt beschädigtes Eigentum</li></ul>
+        </div>
+        <div class="tip">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+          <h4>Während des Umzugs</h4>
+          <ul><li>Transportschäden sind oft nicht abgedeckt</li><li>Vorab kurzfristigen Schutz klären</li><li>Oder prüfen, ob die Hausrat greift</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ JOURNEY ══════ -->
+<section id="journey" class="section">
+  <div class="block" id="infoservice">
+    <div class="wrap">
+      <div class="scene">
+        <svg viewBox="0 0 760 200" width="100%" role="img" aria-label="Junge Person lernt mit Videos und Büchern über Versicherungen">
+          <defs><linearGradient id="infoBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE9D6"/><stop offset="1" stop-color="#FFF7F0"/></linearGradient></defs>
+          <rect width="760" height="200" fill="url(#infoBg)"/>
+          <circle cx="120" cy="74" r="96" fill="#E3F3ED" opacity="0.75"/>
+          <circle cx="690" cy="34" r="64" fill="#FCE0E4" opacity="0.6"/>
+          <rect x="0" y="166" width="760" height="34" fill="#F4DCC6"/>
+          <line x1="0" y1="166" x2="760" y2="166" stroke="#ECCDB2" stroke-width="2"/>
+          <rect x="252" y="150" width="298" height="9" rx="3" fill="#E4C09E"/>
+          <rect x="264" y="159" width="9" height="20" rx="2" fill="#D8B089"/>
+          <rect x="529" y="159" width="9" height="20" rx="2" fill="#D8B089"/>
+          <ellipse cx="212" cy="186" rx="72" ry="12" fill="#FBD49B" opacity="0.7"/>
+          <rect x="176" y="104" width="74" height="62" rx="16" fill="#41B7A1"/>
+          <rect x="176" y="104" width="74" height="20" rx="10" fill="#4ABFA9"/>
+          <rect x="236" y="120" width="42" height="13" rx="6.5" fill="#41B7A1" transform="rotate(9 236 126)"/>
+          <circle cx="213" cy="86" r="22" fill="#43342B"/>
+          <circle cx="213" cy="90" r="17" fill="#F0B083"/>
+          <circle cx="228" cy="90" r="2.6" fill="#F0B083"/>
+          <rect x="280" y="142" width="92" height="10" rx="3" fill="#2A2F3A"/>
+          <rect x="290" y="104" width="72" height="40" rx="5" fill="#2A2F3A"/>
+          <rect x="295" y="109" width="62" height="30" rx="3" fill="#EAF7FD"/>
+          <circle cx="326" cy="124" r="11" fill="#e2001a"/>
+          <path d="M322 119 l8 5 l-8 5 z" fill="#FFFFFF"/>
+          <rect x="386" y="132" width="20" height="18" rx="3" fill="#FFFFFF" stroke="#E4D6C8" stroke-width="2"/>
+          <path d="M406 136 q9 0 9 7 q0 7 -9 7" fill="none" stroke="#E4D6C8" stroke-width="3"/>
+          <rect x="389" y="126" width="14" height="7" rx="3" fill="#F2855E"/>
+          <rect x="430" y="136" width="74" height="13" rx="2.5" fill="#e2001a"/>
+          <rect x="436" y="123" width="64" height="13" rx="2.5" fill="#41B7A1"/>
+          <rect x="442" y="110" width="54" height="13" rx="2.5" fill="#F4B63C"/>
+          <path d="M520 150 q-3 -22 4 -32 q5 10 -1 32 z" fill="#2FA47F"/>
+          <path d="M520 150 q-12 -10 -10 -24 q12 4 11 24 z" fill="#38C28E"/>
+          <path d="M520 150 q12 -8 12 -22 q-11 5 -10 22 z" fill="#41C198"/>
+          <path d="M508 150 h26 l-3 16 h-20 z" fill="#E58A56"/>
+          <path d="M508 150 h26 l-1 6 h-24 z" fill="#D9743F"/>
+          <circle cx="560" cy="56" r="26" fill="#e2001a"/>
+          <path d="M553 46 l16 10 l-16 10 z" fill="#FFFFFF"/>
+          <circle cx="636" cy="106" r="19" fill="#41B7A1"/>
+          <path d="M631 98 l12 8 l-12 8 z" fill="#FFFFFF"/>
+          <circle cx="598" cy="142" r="14" fill="#F4B63C"/>
+          <path d="M594 136 l9 6 l-9 6 z" fill="#FFFFFF"/>
+          <circle cx="120" cy="62" r="22" fill="#FFFFFF" stroke="#FCD9DE" stroke-width="2"/>
+          <circle cx="120" cy="52" r="3" fill="#e2001a"/>
+          <rect x="117.5" y="58" width="5" height="16" rx="2.5" fill="#e2001a"/>
+        </svg>
+      </div>
+      <div class="block-head">
+        <div class="eyebrow">Informationsservice</div>
+        <h2 class="title">Schnell an verlässliche Infos kommen</h2>
+        <p class="lead">Geprüfte Anbieter, Vergleichsportale und verständliche Erklär-Videos – gebündelt an einem Ort, damit du dich in Ruhe und ohne Umwege informieren kannst.</p>
+      </div>
+
+      <h3 class="iss-cat">Informationsvideos</h3>
+      <p class="iss-sub">Versicherungen einfach erklärt – ideal für den Einstieg.</p>
+      <div class="vid-grid">
+        <div class="vid-card">
+          <a class="vid-frame" href="https://youtu.be/uSDW1fwIRJ8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/uSDW1fwIRJ8/hqdefault.jpg" alt="Versicherungen einfach erklärt" loading="lazy" onerror="this.style.display='none'"><span class="vid-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
+          <div class="vid-meta"><b>Versicherungen schnell &amp; einfach erklärt</b><a href="https://youtu.be/uSDW1fwIRJ8" target="_blank" rel="noopener">Auf YouTube ansehen →</a></div>
+        </div>
+        <div class="vid-card">
+          <a class="vid-frame" href="https://youtu.be/q89-_tEzBSs" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/q89-_tEzBSs/hqdefault.jpg" alt="Privathaftpflicht und Mieterhaftpflicht erklärt" loading="lazy" onerror="this.style.display='none'"><span class="vid-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
+          <div class="vid-meta"><b>Privat- &amp; Mieterhaftpflicht</b><a href="https://youtu.be/q89-_tEzBSs" target="_blank" rel="noopener">Auf YouTube ansehen →</a></div>
+        </div>
+        <div class="vid-card">
+          <a class="vid-frame" href="https://youtu.be/8yKBMtnrGDg" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/8yKBMtnrGDg/hqdefault.jpg" alt="Berufsunfähigkeitsversicherung erklärt" loading="lazy" onerror="this.style.display='none'"><span class="vid-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
+          <div class="vid-meta"><b>Berufsunfähigkeitsversicherung</b><a href="https://youtu.be/8yKBMtnrGDg" target="_blank" rel="noopener">Auf YouTube ansehen →</a></div>
+        </div>
+        <div class="vid-card">
+          <a class="vid-frame" href="https://youtu.be/3jNJHsw30_s" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/3jNJHsw30_s/hqdefault.jpg" alt="Krankenversicherung erklärt" loading="lazy" onerror="this.style.display='none'"><span class="vid-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
+          <div class="vid-meta"><b>Krankenversicherung</b><a href="https://youtu.be/3jNJHsw30_s" target="_blank" rel="noopener">Auf YouTube ansehen →</a></div>
+        </div>
+        <div class="vid-card">
+          <a class="vid-frame" href="https://youtu.be/kMbOxrmisuo" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/kMbOxrmisuo/hqdefault.jpg" alt="Rechtsschutzversicherung erklärt" loading="lazy" onerror="this.style.display='none'"><span class="vid-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
+          <div class="vid-meta"><b>Rechtsschutzversicherung</b><a href="https://youtu.be/kMbOxrmisuo" target="_blank" rel="noopener">Auf YouTube ansehen →</a></div>
+        </div>
+        <div class="vid-card">
+          <a class="vid-frame" href="https://youtu.be/9y3J3c4C96c" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/9y3J3c4C96c/hqdefault.jpg" alt="Hausratversicherung erklärt" loading="lazy" onerror="this.style.display='none'"><span class="vid-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
+          <div class="vid-meta"><b>Hausratversicherung</b><a href="https://youtu.be/9y3J3c4C96c" target="_blank" rel="noopener">Auf YouTube ansehen →</a></div>
+        </div>
+      </div>
+
+      <div class="iss-divider"></div>
+
+      <div class="link-cols" style="margin-top:26px">
+        <div class="link-col">
+          <h3 class="iss-cat">Versicherungen</h3>
+          <p class="iss-sub">Bekannte Anbieter zum Informieren.</p>
+          <a class="link-card" href="https://www.ergo.de" target="_blank" rel="noopener"><span class="link-logo">E</span><span class="lc-t"><span class="lc-name">ERGO</span><span class="lc-host">ergo.de</span></span><svg class="lc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <a class="link-card" href="https://www.lvm.de" target="_blank" rel="noopener"><span class="link-logo">LVM</span><span class="lc-t"><span class="lc-name">LVM Versicherung</span><span class="lc-host">lvm.de</span></span><svg class="lc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <a class="link-card" href="https://www.ing.de" target="_blank" rel="noopener"><span class="link-logo">ING</span><span class="lc-t"><span class="lc-name">ING</span><span class="lc-host">ing.de</span></span><svg class="lc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <a class="link-card" href="https://www.check24.de/versicherungen" target="_blank" rel="noopener"><span class="link-logo">C24</span><span class="lc-t"><span class="lc-name">CHECK24</span><span class="lc-host">check24.de</span></span><svg class="lc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+        <div class="link-col">
+          <h3 class="iss-cat">Vergleichsportale</h3>
+          <p class="iss-sub">Tarife nebeneinander vergleichen.</p>
+          <a class="link-card" href="https://www.check24.de" target="_blank" rel="noopener"><span class="link-logo">C24</span><span class="lc-t"><span class="lc-name">CHECK24</span><span class="lc-host">check24.de</span></span><svg class="lc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <a class="link-card" href="https://www.verivox.de" target="_blank" rel="noopener"><span class="link-logo">V</span><span class="lc-t"><span class="lc-name">Verivox</span><span class="lc-host">verivox.de</span></span><svg class="lc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+        <div class="link-col">
+          <h3 class="iss-cat">Bewertungen &amp; Seriosität prüfen</h3>
+          <p class="iss-sub">Erfahrungen anderer Kunden checken.</p>
+          <a class="link-card" href="https://de.trustpilot.com" target="_blank" rel="noopener"><span class="link-logo">TP</span><span class="lc-t"><span class="lc-name">Trustpilot</span><span class="lc-host">de.trustpilot.com</span></span><svg class="lc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <h3 class="iss-cat" style="margin-top:18px">Neutrale Ratgeber</h3>
+          <p class="iss-sub">Unabhängig &amp; werbefrei.</p>
+          <a class="link-card" href="https://www.verbraucherzentrale.de" target="_blank" rel="noopener"><span class="link-logo">VZ</span><span class="lc-t"><span class="lc-name">Verbraucherzentrale</span><span class="lc-host">verbraucherzentrale.de</span></span><svg class="lc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <a class="link-card" href="https://www.finanztip.de/versicherung/" target="_blank" rel="noopener"><span class="link-logo">FT</span><span class="lc-t"><span class="lc-name">Finanztip</span><span class="lc-host">finanztip.de</span></span><svg class="lc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+
+      <div class="insights-block">
+        <div class="ib-head">
+          <div class="iss-cat">Warum digital · Google/Kantar-Studie 2026</div>
+          <h3 class="ib-title">93 % recherchieren online, bevor sie sich versichern</h3>
+          <p class="ib-lead">Junge Menschen informieren und entscheiden sich heute überwiegend digital – Vergleichsportale und sogar KI-Tools gehören zu den wichtigsten Quellen. Genau dort setzt dieser Prototyp an.</p>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-3.8-3.8"/></svg></div>
+            <b>93&nbsp;%</b>
+            <span>recherchieren online, bevor sie eine Versicherung abschließen</span>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+            <b>52&nbsp;%</b>
+            <span>schließen ihre Versicherung direkt online ab</span>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3.5 2"/></svg></div>
+            <b>61&nbsp;%</b>
+            <span>brauchen für die Recherche weniger als zwei Wochen</span>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l1.7 4.8L18.5 10.5 13.7 12.2 12 17l-1.7-4.8L5.5 10.5l4.8-1.7z"/><path d="M19 5.5l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z"/></svg></div>
+            <b>38&nbsp;%</b>
+            <span>nutzen bereits KI-Tools und Chatbots bei der Recherche</span>
+          </div>
+        </div>
+
+        <div class="srcbars">
+          <div class="srcbars-head">
+            <h4>Die wichtigsten Informationsquellen</h4>
+            <span>Anteil der Versicherungskunden, die die jeweilige Quelle nutzen</span>
+          </div>
+          <div class="sbar"><div class="sbar-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-3.8-3.8"/></svg>Suchmaschinen</div><div class="sbar-track"><i style="width:86%"></i></div><div class="sbar-val">86&nbsp;%</div></div>
+          <div class="sbar"><div class="sbar-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m5 7-2.5 5a3 3 0 0 0 5 0L5 7Z"/><path d="m19 7-2.5 5a3 3 0 0 0 5 0L19 7Z"/><path d="M8.5 21h7"/></svg>Vergleichsportale</div><div class="sbar-track"><i style="width:71%"></i></div><div class="sbar-val">71&nbsp;%</div></div>
+          <div class="sbar"><div class="sbar-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5L10 15.5z"/></svg>Online-Videos</div><div class="sbar-track"><i style="width:61%"></i></div><div class="sbar-val">61&nbsp;%</div></div>
+          <div class="sbar"><div class="sbar-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.9 7.6-3.8M8.2 13.1l7.6 3.8"/></svg>Social Media</div><div class="sbar-track"><i style="width:49%"></i></div><div class="sbar-val">49&nbsp;%</div></div>
+          <div class="sbar"><div class="sbar-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l1.7 4.8L18.5 10.5 13.7 12.2 12 17l-1.7-4.8L5.5 10.5l4.8-1.7z"/><path d="M19 5.5l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z"/></svg>KI-Tools / Chatbots</div><div class="sbar-track"><i style="width:38%"></i></div><div class="sbar-val">38&nbsp;%</div></div>
+          <p class="srcbars-note">Quelle: Google / Kantar – „ROPO and Touchpoint Experience", Deutschland 2026 (Versicherungen, n = 470). Online-Recherche definiert als genannte Nutzung von Online-Informationsquellen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ RECHNER (Hub mit Unter-Tabs) ══════ -->
+<section id="rechner" class="section">
+  <div class="block" id="rechnerTop" style="padding-bottom:6px">
+    <div class="wrap">
+      <div class="scene">
+        <svg viewBox="0 0 760 200" width="100%" role="img" aria-label="Smartphone mit Beitragsberechnung, Schutzschild und Münzen">
+          <defs><linearGradient id="calcBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCF3EC"/><stop offset="1" stop-color="#F1FBF7"/></linearGradient></defs>
+          <rect width="760" height="200" fill="url(#calcBg)"/>
+          <circle cx="650" cy="58" r="92" fill="#FCE7D6" opacity="0.65"/>
+          <circle cx="92" cy="52" r="60" fill="#FFFFFF" opacity="0.5"/>
+          <rect x="0" y="166" width="760" height="34" fill="#DCEFE7"/>
+          <line x1="0" y1="166" x2="760" y2="166" stroke="#C8E6DA" stroke-width="2"/>
+          <ellipse cx="380" cy="180" rx="130" ry="13" fill="#CBE9DD" opacity="0.7"/>
+          <rect x="322" y="40" width="116" height="128" rx="18" fill="#2A2F3A"/>
+          <rect x="332" y="52" width="96" height="104" rx="9" fill="#FFFFFF"/>
+          <text x="380" y="92" font-size="34" font-weight="700" fill="#2A2F3A" text-anchor="middle" font-family="'Schibsted Grotesk',sans-serif">€</text>
+          <rect x="344" y="132" width="13" height="16" rx="2" fill="#41B7A1"/>
+          <rect x="363" y="124" width="13" height="24" rx="2" fill="#41B7A1"/>
+          <rect x="382" y="114" width="13" height="34" rx="2" fill="#e2001a"/>
+          <rect x="401" y="122" width="13" height="26" rx="2" fill="#F4B63C"/>
+          <path d="M198 64 l28 10 v17 c0 19 -14 30 -28 36 c-14 -6 -28 -17 -28 -36 v-17 z" fill="#e2001a"/>
+          <path d="M186 100 l8 8 l16 -18" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse cx="588" cy="146" rx="36" ry="14" fill="#E8A21F"/>
+          <ellipse cx="588" cy="137" rx="36" ry="14" fill="#F4B63C"/>
+          <ellipse cx="588" cy="128" rx="36" ry="14" fill="#FFD06B"/>
+          <text x="588" y="134" font-size="17" font-weight="700" fill="#C8861A" text-anchor="middle" font-family="'Schibsted Grotesk',sans-serif">€</text>
+          <circle cx="520" cy="58" r="20" fill="#FFFFFF" stroke="#CFEAE0" stroke-width="2"/>
+          <path d="M520 49 v18 M511 58 h18" stroke="#41B7A1" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="660" cy="104" r="17" fill="#FFFFFF" stroke="#F6D7C5" stroke-width="2"/>
+          <text x="660" y="111" font-size="18" font-weight="700" fill="#F2855E" text-anchor="middle" font-family="'Schibsted Grotesk',sans-serif">%</text>
+          <path d="M250 44 l3.5 9 l9 3.5 l-9 3.5 l-3.5 9 l-3.5 -9 l-9 -3.5 l9 -3.5 z" fill="#F4B63C"/>
+        </svg>
+      </div>
+      <div class="block-head" style="margin-bottom:22px">
+        <div class="eyebrow">Rechner &amp; Tools</div>
+        <h2 class="title">Berechne deinen Schutz für die erste Wohnung</h2>
+        <p class="lead">Zwei Rechner, ein Ziel: Ermittle den Wert deines Hausrats und finde heraus, welche Versicherungen du für deine erste eigene Wohnung brauchst – und was sie im Monat kosten.</p>
+      </div>
+      <div class="subtabs">
+        <button class="subtab active" data-sub="bestand" onclick="setCalc('bestand')">
+          <span class="subtab-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></span>
+          <span class="subtab-t"><b>1 · Bestandsaufnahme</b><small>Wert deines Hausrats ermitteln</small></span>
+        </button>
+        <button class="subtab" data-sub="beitrag" onclick="setCalc('beitrag')">
+          <span class="subtab-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6"/><path d="M9 11h.01M12 11h.01M15 11h.01M9 14h.01M12 14h.01M15 14h.01M9 17h3"/></svg></span>
+          <span class="subtab-t"><b>2 · Beitragsrechner</b><small>Versicherungen vergleichen &amp; berechnen</small></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="sub-bestand" class="subpanel active">
+  <div class="block" style="padding-top:14px">
+    <div class="wrap">
+      <div class="block-head">
+        <div class="eyebrow">Bestandsaufnahme</div>
+        <h2 class="title">Was besitzt du eigentlich?</h2>
+        <p class="lead">Ermittle den Gesamtwert deiner Möbel, Elektronik und Wertsachen – per Foto-Scan oder von Hand. Dieser Wert ist die Grundlage für deine Hausratversicherung: Je genauer, desto besser bist du im Schadensfall abgesichert.</p>
+      </div>
+
+      <div class="inv-shell">
+        <!-- ADD PANEL -->
+        <div class="panel">
+          <div class="panel-head">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.2"/></svg>
+            <div><h3>Gegenstand erfassen</h3><p>Per Foto-Scan oder manuell</p></div>
+          </div>
+          <div class="role-note">
+            <div class="role-col">
+              <div class="role-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l1.7 4.8L18.5 10.5 13.7 12.2 12 17l-1.7-4.8L5.5 10.5l4.8-1.7z"/></svg>Das übernimmt die KI</div>
+              <ul class="role-list">
+                <li>Erkennt <b>klar sichtbare</b> Gegenstände und ordnet sie einer Kategorie zu</li>
+                <li>Schlägt einen vorsichtigen <b>Durchschnittswert (Ø) mit Spanne</b> vor – nur zur Orientierung</li>
+                <li>Zeigt je Treffer eine <b>Erkennungssicherheit</b> und sortiert sehr unsichere automatisch aus</li>
+                <li>Erkennt Marken <b>nur bei klar sichtbarem Logo</b>, nie geraten</li>
+              </ul>
+            </div>
+            <div class="role-col">
+              <div class="role-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Das machst du</div>
+              <ul class="role-list">
+                <li><b>Prüfst und korrigierst</b> jeden Eintrag – Wert anpassen oder löschen</li>
+                <li><b>Bestätigst</b> unsichere Treffer oder trägst Gegenstände <b>manuell</b> ein</li>
+                <li>Ohne aktive KI-Verbindung wird <b>nichts automatisch eingefügt</b> – dann einfach manuell erfassen (mit Marke und Zustand genauso belastbar)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="scan-zone">
+            <label class="scan-opt primary" for="fileSingle">
+              <div class="so-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.2"/></svg></div>
+              <div class="so-t"><b>Einzelnen Gegenstand fotografieren</b><span>Typ und geschätzter Neuwert werden automatisch erkannt</span></div>
+              <svg class="ic so-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+            </label>
+            <input type="file" id="fileSingle" accept="image/*" capture="environment" hidden onchange="analyzeFiles(this,'single')">
+
+            <label class="scan-opt" for="fileRoom">
+              <div class="so-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5a1 1 0 0 1 1-1h3"/><path d="M16 4h3a1 1 0 0 1 1 1v3"/><path d="M20 16v3a1 1 0 0 1-1 1h-3"/><path d="M8 20H5a1 1 0 0 1-1-1v-3"/><rect x="8.5" y="9" width="7" height="6" rx="1"/></svg></div>
+              <div class="so-t"><b>Ganzen Raum fotografieren</b><span>Erfasst alle erkennbaren Gegenstände im Zimmer auf einmal</span></div>
+              <svg class="ic so-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+            </label>
+            <input type="file" id="fileRoom" accept="image/*" capture="environment" hidden onchange="analyzeFiles(this,'room')">
+
+            <label class="scan-opt" for="fileUpload">
+              <div class="so-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M8 8l4-4 4 4"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div>
+              <div class="so-t"><b>Bild oder Datei hochladen</b><span>Galerie-Foto oder PDF-Rechnung – Inhalt wird ausgewertet</span></div>
+              <svg class="ic so-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+            </label>
+            <input type="file" id="fileUpload" accept="image/*,application/pdf" multiple hidden onchange="analyzeFiles(this,'upload')">
+
+            <div class="video-zone" id="videoZone" onclick="document.getElementById('fileVideo').click()" ondragover="videoDragOver(event)" ondragleave="videoDragLeave(event)" ondrop="videoDrop(event)">
+              <div class="so-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg></div>
+              <div class="so-t"><b>Video hochladen</b><span>Datei hierher ziehen oder klicken – die KI wertet ein Standbild aus (nur mit aktiver KI-Verbindung)</span></div>
+              <svg class="ic so-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+            </div>
+            <input type="file" id="fileVideo" accept="video/*" hidden onchange="analyzeVideo(this)">
+
+            <!-- Schnellschätzung nach Haushalts-Niveau (ohne KI, sofort nutzbar) -->
+            <div class="niveau" id="niveauBox">
+              <div class="niveau-head">
+                <span class="niveau-eyebrow">Ohne Foto · sofort</span>
+                <b>Schnellschätzung nach Niveau</b>
+                <span class="niveau-sub">Keine Lust auf Einzelaufstellung? Wähle dein Haushalts-Niveau – wir schätzen die Versicherungssumme nach Wohnfläche.</span>
+              </div>
+              <label class="niveau-flabel">Wohnfläche
+                <span class="niveau-finput"><input type="number" id="nivFlaeche" min="10" max="400" step="5" value="45" inputmode="numeric" oninput="renderNiveau()"> m²</span>
+              </label>
+              <div class="niveau-tiers" id="niveauTiers"></div>
+              <div class="niveau-result" id="niveauResult"></div>
+            </div>
+
+            <div class="link-row">
+              <input type="text" id="invLink" placeholder="Produkt-, Shop-, Auktions- oder Marketplace-Link einfügen" onkeydown="if(event.key==='Enter')analyzeLink()">
+              <button class="btn btn-ghost link-btn" onclick="analyzeLink()">Analysieren</button>
+            </div>
+
+            <div class="scan-status" id="scanStatus"></div>
+          </div>
+          <div class="panel-body">
+            <div class="or-divide">ODER MANUELL</div>
+            <div class="add-row">
+              <div class="field" style="margin-bottom:0">
+                <label>Gegenstand</label>
+                <input type="text" id="invName" placeholder="z. B. Schreibtisch" onkeydown="if(event.key==='Enter')addManual()">
+              </div>
+              <div class="two-col">
+                <div class="field" style="margin-bottom:0">
+                  <label>Kategorie</label>
+                  <select id="invCat">
+                    <option value="Möbel">Möbel</option>
+                    <option value="Elektronik">Elektronik</option>
+                    <option value="Kleidung">Kleidung</option>
+                    <option value="Küche">Küche</option>
+                    <option value="Sonstiges">Sonstiges</option>
+                  </select>
+                </div>
+                <div class="field" style="margin-bottom:0">
+                  <label>Neuwert (€)</label>
+                  <input type="number" id="invVal" placeholder="250" min="0" onkeydown="if(event.key==='Enter')addManual()">
+                </div>
+              </div>
+              <div class="two-col">
+                <div class="field" style="margin-bottom:0;position:relative">
+                  <label>Marke (optional)</label>
+                  <input type="text" id="invBrand" autocomplete="off" placeholder="z. B. Ralph Lauren" oninput="brandSuggest(this.value)" onkeydown="if(event.key==='Enter'){closeBrandList();addManual();}" onblur="setTimeout(closeBrandList,160)">
+                  <div class="brand-list" id="brandList"></div>
+                </div>
+                <div class="field" style="margin-bottom:0">
+                  <label>Zustand (optional)</label>
+                  <select id="invCond">
+                    <option value="">— bitte wählen —</option>
+                    <option value="Neuware">Neuware</option>
+                    <option value="Neuwertig">Neuwertig</option>
+                    <option value="Gebraucht">Gebraucht</option>
+                    <option value="Stark gebraucht">Stark gebraucht</option>
+                    <option value="Beschädigt">Beschädigt</option>
+                    <option value="Defekt">Defekt</option>
+                  </select>
+                </div>
+              </div>
+              <button class="btn btn-primary" style="justify-content:center" onclick="addManual()">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+                Hinzufügen
+              </button>
+            </div>
+            <div class="quick-label">Schnell hinzufügen</div>
+            <div class="quick-chips" id="quickChips"></div>
+          </div>
+        </div>
+
+        <!-- LIST -->
+        <div>
+          <div class="panel" style="margin-bottom:6px">
+            <div class="panel-head" style="justify-content:space-between">
+              <div style="display:flex;align-items:center;gap:11px">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+                <div><h3>Deine Gegenstände</h3><p>Grundlage für deine Versicherungssumme</p></div>
+              </div>
+            </div>
+            <div class="panel-body"><div class="inv-list" id="invList"></div></div>
+          </div>
+
+          <div class="inv-total">
+            <div class="inv-total-main">
+              <div>
+                <div class="label">Gesamtwert deines Hausrats</div>
+                <div class="big">€&nbsp;<span id="invTotal">0</span></div>
+                <div class="cnt"><span id="invCount">0</span> Gegenstände erfasst</div>
+              </div>
+              <button class="btn btn-red" onclick="useInventoryValue()">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                Wert in den Rechner übernehmen
+              </button>
+            </div>
+          </div>
+
+          <div class="disclaimer">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5h.01"/></svg>
+            Die geschätzten Neuwerte sind Orientierungswerte. Für die genaue Absicherung zählt der tatsächliche Wiederbeschaffungswert deiner Gegenstände.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="sub-beitrag" class="subpanel">
+  <div class="block" style="padding-top:14px">
+    <div class="wrap">
+      <div class="block-head">
+        <div class="eyebrow">Beitragsrechner</div>
+        <h2 class="title">Was kostet dich der Versicherungsschutz im Monat?</h2>
+        <p class="lead">Gib links einmal deine Situation an. Du siehst dann für jede der wichtigsten Versicherungen rund um den Auszug eine persönliche Beitragsschätzung – und stellst dir dein eigenes Paket zusammen.</p>
+        <div class="data-note">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-7M20 16v-3"/></svg>
+          <p>Nach Suchmaschinen sind <b>Vergleichsportale die zweitwichtigste Informationsquelle (71 %)</b> – ein eigener Vergleich gehört für die meisten zum Auszug dazu.<span class="src">Quelle: Google/Kantar, 2026</span></p>
+        </div>
+      </div>
+
+      <div class="calc-shell">
+        <!-- INPUT -->
+        <div class="panel">
+          <div class="panel-head">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+            <div><h3>Deine Angaben</h3><p>Grundlage für die Berechnung</p></div>
+          </div>
+          <div class="panel-body">
+            <div class="form-section-label">Über dich</div>
+            <div class="two-col">
+              <div class="field">
+                <label>Alter</label>
+                <input type="number" id="alter" value="22" min="16" max="99">
+              </div>
+              <div class="field">
+                <label>Status</label>
+                <select id="status">
+                  <option value="azubi" selected>Auszubildende:r</option>
+                  <option value="student">Student:in</option>
+                  <option value="berufstaetig">Berufstätig</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label>Brutto-Monatseinkommen (€)</label>
+              <input type="number" id="einkommen" value="1200" min="0" step="50">
+              <div class="hint">Für Kranken- und Berufsunfähigkeitsbeitrag</div>
+            </div>
+
+            <div class="form-section-label">Deine Wohnung</div>
+            <div class="two-col">
+              <div class="field">
+                <label>Postleitzahl</label>
+                <input type="text" id="plz" value="90402" maxlength="5">
+              </div>
+              <div class="field">
+                <label>Wohnfläche (m²)</label>
+                <input type="number" id="flaeche" value="45" min="10" max="400">
+              </div>
+            </div>
+            <div class="field">
+              <label>Wert deines Hausrats (€)</label>
+              <input type="number" id="wert" value="8000" min="1000" step="500">
+              <div class="hint">Möbel, Elektronik, Kleidung – alles zusammen</div>
+            </div>
+            <div class="field">
+              <label>Sicherheit der Wohnung</label>
+              <select id="sicherheit">
+                <option value="standard">Standard-Schloss</option>
+                <option value="gut" selected>Sicherheitsschloss</option>
+                <option value="alarm">Alarmanlage</option>
+              </select>
+            </div>
+
+            <div class="form-section-label">Zusätzlich</div>
+            <label class="switch-field">
+              <span class="sf-text">Ich habe ein Haustier</span>
+              <span class="toggle"><input type="checkbox" id="haustier"><span class="track"></span><span class="thumb"></span></span>
+            </label>
+
+            <div class="form-section-label">Dein Budget</div>
+            <div class="field">
+              <label>Monatliches Budget (€)</label>
+              <input type="number" id="budget" value="" min="0" step="5" placeholder="z. B. 25">
+              <div class="hint">Wie viel möchtest du monatlich für Versicherungen ausgeben? Wir empfehlen dann, was hineinpasst. Leer = keine Begrenzung.</div>
+            </div>
+            <div class="bgt-presets">
+              <button type="button" class="bgt-chip" onclick="setBudget(10)">10 €</button>
+              <button type="button" class="bgt-chip" onclick="setBudget(25)">25 €</button>
+              <button type="button" class="bgt-chip" onclick="setBudget(50)">50 €</button>
+              <button type="button" class="bgt-chip" onclick="setBudget(0)">Kein Limit</button>
+            </div>
+
+            <button class="btn btn-primary calc-btn" onclick="berechnenBtn()">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              Beiträge berechnen
+            </button>
+            <p class="reassure">Kein Vorwissen nötig – schon mit wenigen Angaben. Du kannst alle Werte jederzeit anpassen.</p>
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div>
+          <div class="panel" id="ergebnis" style="margin-bottom:6px">
+            <div class="panel-head" style="justify-content:space-between">
+              <div style="display:flex;align-items:center;gap:11px">
+                <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-7M20 16v-3"/></svg>
+                <div><h3>Dein Beitrag je Versicherung</h3><p>Wähle mit dem Schalter, was in dein Paket gehört</p></div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="budget-note" id="budgetNote"></div>
+              <div class="cmp-list" id="cmpList"><!-- gefüllt per JS --></div>
+            </div>
+          </div>
+
+          <div class="summary">
+            <div class="summary-main">
+              <div>
+                <div class="label">Dein Schutzpaket kostet</div>
+                <div class="big">€&nbsp;<span id="sumMonth">0,00</span><small>/Monat</small></div>
+                <div class="yr">Das entspricht <span id="sumYear">0,00</span> € im Jahr</div>
+              </div>
+              <div class="summary-side">
+                <div class="count"><span id="sumCount">0</span> Versicherungen ausgewählt</div>
+                <button class="btn btn-red summary-cta" onclick="go('chat')">
+                  <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 3.5V6a1 1 0 0 1 1-1Z"/></svg>
+                  Fragen? Zum Berater
+                </button>
+              </div>
+            </div>
+            <div class="summary-foot">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5h.01"/></svg>
+              Die Mieterhaftpflicht ist in der Privathaftpflicht enthalten und wird nicht separat berechnet.
+            </div>
+          </div>
+
+          <div class="disclaimer">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5h.01"/></svg>
+            Alle Beiträge sind unverbindliche Richtwerte für diesen Prototypen und ersetzen kein konkretes Angebot. Die tatsächlichen Tarife können je nach Anbieter und Bedingungen abweichen.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ══════ CHAT ══════ -->
+<section id="chat" class="section">
+  <div class="block">
+    <div class="wrap">
+      <div class="scene">
+        <svg viewBox="0 0 760 200" width="100%" role="img" aria-label="Chat-Sprechblasen und freundliche Person mit Smartphone">
+          <defs><linearGradient id="chatBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCEBF7"/><stop offset="1" stop-color="#F2F7FC"/></linearGradient></defs>
+          <rect width="760" height="200" fill="url(#chatBg)"/>
+          <circle cx="660" cy="150" r="100" fill="#E9E3F6" opacity="0.7"/>
+          <circle cx="110" cy="40" r="58" fill="#FFFFFF" opacity="0.55"/>
+          <rect x="0" y="166" width="760" height="34" fill="#DCE7F2"/>
+          <line x1="0" y1="166" x2="760" y2="166" stroke="#C9D9EA" stroke-width="2"/>
+          <path d="M196 142 v26 l24 -26 z" fill="#FFFFFF"/>
+          <rect x="158" y="48" width="252" height="96" rx="20" fill="#FFFFFF" stroke="#E3EAF2" stroke-width="2"/>
+          <rect x="180" y="72" width="184" height="9" rx="4.5" fill="#C9D6E4"/>
+          <rect x="180" y="90" width="208" height="9" rx="4.5" fill="#C9D6E4"/>
+          <rect x="180" y="108" width="150" height="9" rx="4.5" fill="#C9D6E4"/>
+          <path d="M596 150 v22 l-22 -22 z" fill="#e2001a"/>
+          <rect x="466" y="92" width="158" height="64" rx="18" fill="#e2001a"/>
+          <rect x="486" y="110" width="118" height="8" rx="4" fill="#FFFFFF" opacity="0.92"/>
+          <rect x="486" y="126" width="86" height="8" rx="4" fill="#FFFFFF" opacity="0.92"/>
+          <ellipse cx="668" cy="184" rx="60" ry="11" fill="#DDD4F0" opacity="0.7"/>
+          <rect x="632" y="120" width="72" height="58" rx="16" fill="#41B7A1"/>
+          <rect x="632" y="120" width="72" height="18" rx="9" fill="#4ABFA9"/>
+          <circle cx="668" cy="98" r="26" fill="#43342B"/>
+          <circle cx="668" cy="102" r="20" fill="#F0B083"/>
+          <circle cx="686" cy="102" r="2.8" fill="#F0B083"/>
+          <rect x="604" y="128" width="22" height="38" rx="5" fill="#2A2F3A" transform="rotate(-13 615 147)"/>
+          <rect x="608" y="133" width="14" height="26" rx="2.5" fill="#BFE6F6" transform="rotate(-13 615 147)"/>
+          <circle cx="118" cy="118" r="25" fill="#F4B63C"/>
+          <text x="118" y="128" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="middle" font-family="'Schibsted Grotesk',sans-serif">?</text>
+          <path d="M432 40 l4 11 l11 4 l-11 4 l-4 11 l-4 -11 l-11 -4 l11 -4 z" fill="#e2001a"/>
+        </svg>
+      </div>
+      <div class="block-head">
+        <div class="eyebrow">Berater</div>
+        <h2 class="title">Deine Fragen, einfach erklärt</h2>
+        <p class="lead">Stell deine Fragen rund um Versicherungen beim Auszug – verständlich und ohne Fachchinesisch.</p>
+        <div class="data-note">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 13.4 9 18 10.5 13.4 12 12 16.5 10.6 12 6 10.5 10.6 9 12 4.5Z"/></svg>
+          <p>Bereits <b>38 %</b> der Versicherungskunden nutzen KI-Tools und Chatbots bei ihrer Recherche – genau hier setzt dieser Berater an.<span class="src">Quelle: Google/Kantar, 2026</span></p>
+        </div>
+      </div>
+
+      <div class="chat-shell">
+        <div class="chips">
+          <button class="chip" onclick="chip('Was deckt eine Hausratversicherung genau ab?')">Hausrat erklärt</button>
+          <button class="chip" onclick="chip('Brauche ich als Azubi eine eigene Krankenversicherung?')">Kranken als Azubi</button>
+          <button class="chip" onclick="chip('Was passiert, wenn ich bei jemandem etwas kaputt mache?')">Schaden verursacht</button>
+          <button class="chip" onclick="chip('Wie hoch sollte meine Versicherungssumme sein?')">Versicherungssumme</button>
+          <button class="chip" onclick="chip('Lohnt sich eine Berufsunfähigkeitsversicherung schon jetzt?')">Berufsunfähigkeit</button>
+        </div>
+
+        <div class="chatbox">
+          <div class="chat-bar">
+            <div class="av"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 13.4 9 18 10.5 13.4 12 12 16.5 10.6 12 6 10.5 10.6 9 12 4.5Z"/></svg></div>
+            <div><b>ERGO Versicherungs-Assistent</b><span>online</span></div>
+          </div>
+
+          <div class="chat-win" id="chatWin">
+            <div class="m-row">
+              <div class="m-av bot"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 13.4 9 18 10.5 13.4 12 12 16.5 10.6 12 6 10.5 10.6 9 12 4.5Z"/></svg></div>
+              <div class="bubble bot">Hallo! Ich bin dein Versicherungs-Assistent. Du ziehst gerade in deine erste eigene Wohnung und fragst dich, welcher Schutz wirklich sinnvoll ist?<br><br>Stell mir einfach deine Frage – oder nutze die Vorschläge oben.</div>
+            </div>
+          </div>
+
+          <div class="typing" id="typing">
+            <div class="m-av bot"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 13.4 9 18 10.5 13.4 12 12 16.5 10.6 12 6 10.5 10.6 9 12 4.5Z"/></svg></div>
+            <div class="tdots"><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="chat-input-bar">
+            <input id="chatInput" placeholder="Deine Frage eingeben …" onkeydown="if(event.key==='Enter')sendMsg()">
+            <button class="send-btn" onclick="sendMsg()">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 20 4l-6 16-3-7-7-1Z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ QUELLEN ══════ -->
+<section id="quellen" class="section">
+  <div class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <div class="eyebrow">Quellen &amp; Transparenz</div>
+        <h2 class="title">Woher die Informationen stammen</h2>
+        <p class="lead">Damit du dich auf die Inhalte verlassen kannst, sind hier alle Quellen gebündelt – getrennt nach belegten Daten und bewusst gekennzeichneten Beispielwerten.</p>
+      </div>
+
+      <div class="src-block">
+        <h3>Marktdaten</h3>
+        <p>Alle Statistiken auf der Startseite (z. B. <b>93 % recherchieren online</b>, <b>38 % nutzen KI-Tools</b>) stammen aus der Studie <b>Google / Kantar – „ROPO and Touchpoint Experience", Deutschland 2026</b> (Versicherungen, n = 470).</p>
+      </div>
+
+      <div class="src-block">
+        <h3>UX- &amp; Nudging-Prinzipien</h3>
+        <p>Gestaltungsideen wie verständliche Schritte und vertrauensbildende Hinweise orientieren sich am internen <b>ERGO-Konzept zu Behavioral Economics &amp; Nudging</b> (Conversion-Optimierung).</p>
+      </div>
+
+      <div class="src-block">
+        <h3>Eigene Inhalte &amp; Recherche</h3>
+        <ul>
+          <li>Die <b>fünf Schritte</b> zur Entscheidung – eigene Ausarbeitung.</li>
+          <li><b>Vergleichsportale</b> (CHECK24, Verivox) und <b>Anbieter</b> (ERGO, LVM, ING) – eigene Recherche, siehe Informationsservice.</li>
+          <li><b>Erklär-Videos</b> auf YouTube – eingebunden im Informationsservice. Die verwendeten Quellen:
+            <ul class="src-links">
+              <li>Versicherungen allgemein: <a href="https://youtu.be/uSDW1fwIRJ8" target="_blank" rel="noopener">youtu.be/uSDW1fwIRJ8</a></li>
+              <li>Privat- &amp; Mieterhaftpflicht: <a href="https://youtu.be/q89-_tEzBSs" target="_blank" rel="noopener">youtu.be/q89-_tEzBSs</a></li>
+              <li>Berufsunfähigkeit: <a href="https://youtu.be/8yKBMtnrGDg" target="_blank" rel="noopener">youtu.be/8yKBMtnrGDg</a></li>
+              <li>Krankenversicherung: <a href="https://youtu.be/3jNJHsw30_s" target="_blank" rel="noopener">youtu.be/3jNJHsw30_s</a></li>
+              <li>Rechtsschutz: <a href="https://youtu.be/kMbOxrmisuo" target="_blank" rel="noopener">youtu.be/kMbOxrmisuo</a></li>
+              <li>Hausrat: <a href="https://youtu.be/9y3J3c4C96c" target="_blank" rel="noopener">youtu.be/9y3J3c4C96c</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="src-block">
+        <h3>Allgemeines Versicherungs-Fachwissen</h3>
+        <p>Erklärungen, welche Versicherung was abdeckt, sowie Hinweise wie die <b>Familienversicherung bis 25</b> oder die <b>650-€-pro-m²-Faustregel</b> sind allgemein gültiges Fachwissen. Zur Vertiefung eignen sich neutrale Stellen wie die <a href="https://www.verbraucherzentrale.de" target="_blank" rel="noopener">Verbraucherzentrale</a> oder der <a href="https://www.gdv.de" target="_blank" rel="noopener">GDV</a>.</p>
+      </div>
+
+      <div class="src-block warn">
+        <h3>Wichtig: Beträge sind Beispielwerte</h3>
+        <p><b>Alle Beiträge im Rechner und die geschätzten Gegenstandswerte sind unverbindliche Richtwerte für diesen Prototyp – keine echten ERGO- oder Markttarife.</b> Sie dienen nur der Veranschaulichung. Für verbindliche Preise nutze die Vergleichsportale oder ein konkretes Angebot eines Anbieters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <div class="foot-brand"><span class="word">ERGO</span><span class="sq"></span></div>
+      <p style="margin-top:10px"><strong>Praktikums-Prototyp</strong> · Erstellt für die Präsentation am 15. Juni in Nürnberg. Alle Preisangaben sind unverbindliche Richtwerte.</p>
+    </div>
+    <p>Schwerpunkt-Produkt: Hausratversicherung für den ersten eigenen Haushalt.</p>
+  </div>
+</footer>
+
+<script>
+/* ── NAVIGATION ── */
+function go(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active', t.dataset.s===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+/* Wechselt zwischen den Rechnern (Unter-Tabs) */
+function setCalc(sub){
+  document.querySelectorAll('.subpanel').forEach(p=>p.classList.toggle('active', p.id==='sub-'+sub));
+  document.querySelectorAll('.subtab').forEach(t=>t.classList.toggle('active', t.dataset.sub===sub));
+  const top=document.getElementById('rechnerTop');
+  if(top) top.scrollIntoView({behavior:'smooth',block:'start'});
+}
+/* Öffnet den Rechner-Bereich und direkt den gewünschten Rechner */
+function goCalc(sub){
+  go('rechner');
+  document.querySelectorAll('.subpanel').forEach(p=>p.classList.toggle('active', p.id==='sub-'+sub));
+  document.querySelectorAll('.subtab').forEach(t=>t.classList.toggle('active', t.dataset.sub===sub));
+}
+/* Klappt eine Versicherungs-Karte (Akkordeon) auf/zu */
+function toggleCard(el){ el.classList.toggle('open'); }
+
+/* ── helpers ── */
+const NUM = id => parseFloat(document.getElementById(id).value);
+const fmt = n => n.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2});
+function flip(id,e){ if(e.target.tagName!=='INPUT'){const c=document.getElementById(id);c.checked=!c.checked;} }
+
+/* ── SVG icons for calculator rows ── */
+const ICON = {
+  hausrat:'<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M9.5 21v-6h5v6"/>',
+  phv:'<path d="M12 3 5 6v5c0 4.5 3 8 7 9.5 4-1.5 7-5 7-9.5V6l-7-3Z"/><path d="m9 11.5 2 2 4-4"/>',
+  mieter:'<circle cx="7.5" cy="15.5" r="3.5"/><path d="m10 13 7-7"/><path d="m14.5 5.5 2 2"/><path d="m17 3 2.5 2.5L17 8"/>',
+  kranken:'<rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M12 8.5v7M8.5 12h7"/>',
+  bu:'<path d="M12 3a9 9 0 0 1 9 9H3a9 9 0 0 1 9-9Z"/><path d="M12 12v6.5a2.5 2.5 0 0 0 5 0"/>',
+  geraete:'<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20"/>',
+  recht:'<path d="M12 3v18"/><path d="M5 7h14"/><path d="m5 7-2.5 5a3 3 0 0 0 5 0L5 7Z"/><path d="m19 7-2.5 5a3 3 0 0 0 5 0L19 7Z"/><path d="M8.5 21h7"/>',
+  zahn:'<path d="M12 5.4C10.6 4 8.2 3.6 6.7 4.9 5 6.4 5.2 9 5.8 11.3c.4 1.6.6 3 .9 4.4.3 1.5.5 3.6 1.6 3.6 1 0 1.1-1.6 1.4-2.7.2-.9.4-1.4.9-1.4s.7.5.9 1.4c.3 1.1.4 2.7 1.4 2.7 1.1 0 1.3-2.1 1.6-3.6.3-1.4.5-2.8.9-4.4.6-2.3.8-4.9-.9-6.4C15.5 3.6 13.1 4 12 5.4Z"/>'
+};
+const svg = k => `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICON[k]}</svg>`;
+const PRIO = {high:['high','Sehr wichtig'], must:['must','Pflicht'], mid:['mid','Empfehlenswert'], low:['low','Optional']};
+
+/* ── insurance definitions ── */
+const INSURANCES = [
+  { id:'hausrat', icon:'hausrat', name:'Hausratversicherung', prio:'high', market:'4–12 €', def:true,
+    desc:'Möbel, Elektronik & Wertsachen bei Einbruch, Brand und Wasser.',
+    calc:p=>{ let b=Math.max((p.wert||5000)/1000*0.55,(p.flaeche||40)*0.07);
+      b*= {standard:1.0,gut:0.93,alarm:0.85}[p.sicherheit];
+      if(p.plz.startsWith('8')||p.plz.startsWith('1')) b*=1.08; else if(p.plz.startsWith('9')) b*=1.02;
+      return Math.max(b,3.5); } },
+
+  { id:'phv', icon:'phv', name:'Privathaftpflicht', prio:'high', market:'3–6 €', def:true,
+    desc:'Wenn du anderen Personen-, Sach- oder Vermögensschäden zufügst.',
+    calc:p=>{ let b=p.status==='berufstaetig'?4.6:3.6; if(p.haustier)b+=2.0; if(p.alter>=30)b+=0.6; return b; } },
+
+  { id:'mieter', icon:'mieter', name:'Mieterhaftpflicht', prio:'high', market:'inklusive', def:true, included:true,
+    desc:'Schäden an der Mietwohnung selbst – in der Privathaftpflicht enthalten.',
+    calc:()=>0 },
+
+  { id:'kranken', icon:'kranken', name:'Krankenversicherung', prio:'must', market:'Pflicht', def:true,
+    desc:'Pflicht. Unter 25 und in Ausbildung meist noch beitragsfrei über die Familienversicherung der Eltern.',
+    calc:p=>{ if(p.status==='student') return (p.alter<25?0:125); const inc=p.einkommen||(p.status==='azubi'?1000:2500); return inc*0.11; } },
+
+  { id:'bu', icon:'bu', name:'Berufsunfähigkeit', prio:'high', market:'20–50 €', def:true,
+    desc:'Sichert dein Einkommen bei gesundheitlich bedingter Berufsunfähigkeit.',
+    calc:p=>{ const benefit=Math.max(1000,(p.einkommen||1500)*0.8);
+      const rate=17+Math.max(0,p.alter-20)*0.85; const jf=p.status==='azubi'?1.15:1.0;
+      return benefit/1000*rate*jf; } },
+
+  { id:'recht', icon:'recht', name:'Rechtsschutz', prio:'mid', market:'8–20 €', def:false,
+    desc:'Anwalts- und Gerichtskosten, z. B. bei Streit mit dem Vermieter.',
+    calc:p=>p.status==='berufstaetig'?13:10 }
+];
+
+let premiums = {};
+/* Budget-Empfehlung: welche Versicherungen passen ins Budget? */
+const PRIO_RANK = {must:0, high:1, mid:2, low:3};
+let recState = {rec:{}, over:{}, active:false};
+
+function getProfile(){
+  return {
+    alter:NUM('alter')||22,
+    status:document.getElementById('status').value,
+    einkommen:NUM('einkommen')||0,
+    plz:(document.getElementById('plz').value||'').trim(),
+    flaeche:NUM('flaeche')||0,
+    wert:NUM('wert')||0,
+    sicherheit:document.getElementById('sicherheit').value,
+    haustier:document.getElementById('haustier').checked,
+    budget:NUM('budget')||0
+  };
+}
+
+const CALC_GROUPS = [
+  { label:'Grundschutz', hint:'Für die erste eigene Wohnung dringend empfohlen', ids:['hausrat','phv','mieter','kranken'] },
+  { label:'Weitere Absicherung', hint:'Sinnvolle Ergänzung – je früher, desto günstiger', ids:['bu','recht'] }
+];
+
+function rowHtml(ins, maxP){
+  const v=premiums[ins.id];
+  const [pc,pl]=PRIO[ins.prio];
+  const barW = ins.included?0:Math.max(6,Math.round(v/maxP*100));
+  const isOver = !!recState.over[ins.id];
+  const rec = recState.rec[ins.id]!==undefined ? recState.rec[ins.id] : ins.def;
+  const checked = ins.included? '' : (rec?'checked':'');
+  const overBadge = isOver ? ' <span class="badge-over">über Budget</span>' : '';
+  const moneyHtml = ins.included
+    ? `<div class="incl">inklusive</div><div class="mkt">in der Privathaftpflicht enthalten</div>`
+    : `<div class="amt">${fmt(v)}&nbsp;<small>€/Mon.</small></div><div class="mkt">marktüblich ${ins.market}</div><div class="bar"><i style="width:${barW}%"></i></div>`;
+  const toggleHtml = ins.included
+    ? `<span class="pill">Teil der PHV</span>`
+    : `<label class="toggle"><input type="checkbox" data-id="${ins.id}" ${checked} onchange="updateSum()"><span class="track"></span><span class="thumb"></span></label>`;
+  return `<div class="cmp-row${isOver?' over':''}">
+      <div class="cmp-name"><div class="cmp-ic">${svg(ins.icon)}</div><div><b>${ins.name}${overBadge}</b><p>${ins.desc}</p></div></div>
+      <div class="cmp-prio"><span class="cmp-collabel">Priorität</span><span class="dot ${pc}"></span>${pl}</div>
+      <div class="cmp-money"><span class="cmp-collabel">Dein Beitrag / Monat</span>${moneyHtml}</div>
+      <div class="cmp-toggle"><span class="cmp-collabel">Im Paket</span>${toggleHtml}</div>
+    </div>`;
+}
+
+function berechnen(){
+  const p=getProfile();
+  premiums={};
+  let maxP=0;
+  INSURANCES.forEach(ins=>{ const v=ins.included?0:Math.round(ins.calc(p)*100)/100; premiums[ins.id]=v; if(v>maxP)maxP=v; });
+  const byId=Object.fromEntries(INSURANCES.map(i=>[i.id,i]));
+
+  /* ── Budget-Empfehlung: was passt ins Budget? ── */
+  const budget=p.budget;
+  const rec={}, over={};
+  const selectable=INSURANCES.filter(i=>!i.included);
+  // Pflicht (Krankenversicherung) ist immer Teil des Schutzes und zählt nicht gegen das Budget
+  selectable.filter(i=>i.prio==='must').forEach(ins=>{ rec[ins.id]=true; });
+  const choosable=selectable.filter(i=>i.prio!=='must'); // Hausrat, Haftpflicht, BU, Rechtsschutz
+  if(budget>0){
+    let run=0;
+    choosable.sort((a,b)=>(PRIO_RANK[a.prio]-PRIO_RANK[b.prio])||(premiums[a.id]-premiums[b.id]))
+      .forEach(ins=>{
+        const v=premiums[ins.id];
+        if(run+v<=budget){ rec[ins.id]=true; run+=v; }
+        else { rec[ins.id]=false; over[ins.id]=true; }
+      });
+  } else {
+    choosable.forEach(ins=>{ rec[ins.id]=ins.def; });
+  }
+  recState={rec, over, active:budget>0};
+
+  const header=`<div class="cmp-head"><div>Versicherung</div><div>Priorität</div><div>Dein Beitrag / Monat</div><div>Im Paket</div></div>`;
+  const groups=CALC_GROUPS.map(g=>{
+    const rows=g.ids.map(id=>rowHtml(byId[id],maxP)).join('');
+    return `<div class="cmp-group"><div class="cmp-group-head"><h4>${g.label}</h4><span>${g.hint}</span></div>${rows}</div>`;
+  }).join('');
+  document.getElementById('cmpList').innerHTML = header + groups;
+
+  /* ── Budget-Hinweis ── */
+  const note=document.getElementById('budgetNote');
+  if(note){
+    if(budget>0){
+      const recIns=choosable.filter(i=>rec[i.id]);
+      const overIns=choosable.filter(i=>over[i.id]);
+      const recTotal=recIns.reduce((s,i)=>s+premiums[i.id],0);
+      const krankenCost=selectable.filter(i=>i.prio==='must').reduce((s,i)=>s+premiums[i.id],0);
+      const names=arr=>arr.map(i=>i.name).join(', ');
+      const bShow=budget.toLocaleString('de-DE');
+      let html;
+      if(recIns.length){
+        note.className='budget-note ok show';
+        html=`<b>In deinem Budget von ${bShow} €/Monat empfohlen:</b> ${names(recIns)} – zusammen ${fmt(recTotal)} €/Monat.`;
+      } else {
+        note.className='budget-note warn show';
+        html=`<b>Mit ${bShow} €/Monat passt noch keine der wählbaren Versicherungen vollständig hinein.</b> Schon ab wenigen Euro ist die Privathaftpflicht möglich – ein etwas höheres Budget schafft Spielraum.`;
+      }
+      if(krankenCost>0) html+=`<div class="bn-names">Die gesetzliche Krankenversicherung (~${fmt(krankenCost)} €/Monat) ist Pflicht und kommt unabhängig vom Budget hinzu.</div>`;
+      if(overIns.length) html+=`<div class="bn-names">Über deinem Budget (später sinnvoll zu ergänzen): ${names(overIns)}.</div>`;
+      note.innerHTML=html;
+    } else {
+      note.className='budget-note';
+      note.innerHTML='';
+    }
+  }
+
+  updateSum();
+}
+
+function updateSum(){
+  let total=0,count=0;
+  document.querySelectorAll('#cmpList input[type=checkbox]').forEach(cb=>{
+    if(cb.checked){ total+=premiums[cb.dataset.id]||0; count++; }
+  });
+  document.getElementById('sumMonth').textContent=fmt(total);
+  document.getElementById('sumYear').textContent=fmt(total*12);
+  document.getElementById('sumCount').textContent=count;
+}
+
+/* Setzt das Budget per Schnellauswahl und rechnet neu */
+function setBudget(v){
+  const el=document.getElementById('budget');
+  if(!el) return;
+  el.value = v>0 ? v : '';
+  berechnen();
+}
+/* Button: rechnet und scrollt zu den Ergebnissen (auf dem Handy liegen sie unter dem Formular) */
+function berechnenBtn(){
+  berechnen();
+  const el=document.getElementById('ergebnis');
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* recompute when inputs change */
+['alter','status','einkommen','plz','flaeche','wert','sicherheit','haustier','budget'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el) el.addEventListener('change',berechnen);
+});
+
+/* ════ CHAT (mit KI + lokalem Fallback) ════ */
+const SYSTEM_PROMPT = `Du bist der Versicherungs-Assistent dieser Webseite für junge Menschen (Schüler, Azubis, Studierende, ca. 17–25 Jahre), die zum ersten Mal in eine eigene Wohnung ziehen. Erkläre Versicherungen einfach, konkret und sachlich korrekt, ohne Fachjargon und ohne in die Irre zu führen. Die wichtigsten Produkte: Krankenversicherung (Pflicht; bei jungen Leuten unter 25 in Ausbildung oft noch beitragsfrei über die Familienversicherung), Privathaftpflicht und Hausrat. Weise darauf hin, dass eine früh abgeschlossene Berufsunfähigkeitsversicherung besonders günstig ist. Nenne bei Bedarf grobe Preis-Richtwerte (Haftpflicht ab ca. 3 €, Hausrat ab ca. 4 € im Monat) und kennzeichne sie als unverbindlich. Antworte auf Deutsch, freundlich und kompakt (2–4 Sätze, bei komplexen Fragen etwas mehr). Keine Emojis. Wenn du etwas nicht sicher weißt, sage es ehrlich und verweise auf eine persönliche Beratung oder die Verbraucherzentrale.`;
+const chatHistory=[];
+
+const KB=[
+  [['hausratsversicherung','hausratversicherung','hausrat','einbruch','möbel versich','wohnungsbrand'],
+   'Die Hausratversicherung schützt dein bewegliches Eigentum in der Wohnung – Möbel, Elektronik, Kleidung und Wertsachen. Sie ersetzt den Neuwert bei Einbruchdiebstahl, Feuer, Leitungswasser, Sturm und Hagel. Für deine erste Wohnung ist sie nach der Privathaftpflicht die wichtigste Versicherung. Die Versicherungssumme sollte dem Gesamtwert deiner Sachen entsprechen – die Bestandsaufnahme in dieser App hilft dir dabei.'],
+
+  [['privathaftpflicht','haftpflicht','haftung','jemandem schaden','schaden zugefügt','phv'],
+   'Die Privathaftpflicht ist die wichtigste Versicherung überhaupt: Sie springt ein, wenn du anderen versehentlich einen Schaden zufügst – egal ob Personen-, Sach- oder Vermögensschaden. Beispiel: Du rempelst jemanden an, der sein Handy fallen lässt, oder verursachst einen Wasserschaden in der Nachbarwohnung. Solche Forderungen können sehr hoch werden, deshalb ist sie unverzichtbar. Gute Tarife gibt es ab etwa 3 € im Monat, Schäden an deiner Mietwohnung sind meist mitversichert.'],
+
+  [['mieterhaft','mietsach','schaden an der wohnung','schaden an der mietwohnung','parkett','kaution schaden'],
+   'Die Mieterhaftpflicht deckt Schäden, die du an der gemieteten Wohnung selbst verursachst – etwa einen Brandfleck im Parkett, einen Sprung im Waschbecken oder einen beschädigten Bodenbelag. In fast allen Privathaftpflicht-Tarifen sind solche Mietsachschäden bereits enthalten. Achte beim Abschluss nur darauf, dass diese Leistung im Tarif genannt ist – einen separaten Vertrag brauchst du in der Regel nicht.'],
+
+  [['krankenversicherung','krankenkasse','gesetzlich versichert','gkv','pkv','krankenversichert'],
+   'Eine Krankenversicherung ist in Deutschland Pflicht. Als Schüler oder Student unter 25 bist du meist noch kostenlos über die Familienversicherung deiner Eltern abgesichert – auch nach dem Auszug, solange du in Ausbildung bist und nicht zu viel verdienst. Als Azubi oder Berufstätige:r zahlst du einen einkommensabhängigen Beitrag, von dem dein Arbeitgeber die Hälfte übernimmt. Prüfe rechtzeitig, ob und wie lange die Familienversicherung für dich noch gilt.'],
+
+  [['familienversicherung','über die eltern','bei den eltern mitversichert','noch mitversichert','eltern versichert'],
+   'Über die Familienversicherung bist du beitragsfrei bei deinen Eltern mitversichert – bei Schülern und Studenten in der Regel bis zum 25. Geburtstag. Voraussetzung ist, dass du nicht regelmäßig über der Einkommensgrenze verdienst (ein Minijob ist erlaubt). Ein eigener Wohnsitz allein beendet die Familienversicherung nicht. Endet sie, wechselst du z. B. in die studentische Krankenversicherung für rund 120–130 € im Monat.'],
+
+  [['berufsunfähig','berufsunfaehig','arbeitskraft','bu ','bu-versicherung','bu abschließen','nicht mehr arbeiten','erwerbsunfähig'],
+   'Die Berufsunfähigkeitsversicherung (BU) zahlt dir eine monatliche Rente, wenn du aus gesundheitlichen Gründen längerfristig nicht mehr arbeiten kannst. Sie sichert dein wichtigstes Gut ab: deine Arbeitskraft und damit dein künftiges Einkommen. Der wichtigste Tipp: möglichst früh abschließen – in jungen, gesunden Jahren sind die Beiträge niedrig und du wirst problemlos angenommen. Schon als Schüler, Azubi oder Student kannst du dir günstige Konditionen sichern.'],
+
+  [['rechtsschutz','anwalt','gericht','klage','vor gericht','streit mit dem vermieter','mietrecht'],
+   'Eine Rechtsschutzversicherung übernimmt Anwalts-, Gerichts- und Sachverständigenkosten, wenn du dein Recht durchsetzen musst. Für Mieter ist vor allem der Mietrechtsschutz interessant – etwa bei Streit über die Kaution, die Nebenkostenabrechnung oder eine Kündigung. Sie ist meist modular aufgebaut (Privat, Miete, Verkehr, Beruf), du zahlst also nur für die Bereiche, die du brauchst. Beachte die übliche Wartezeit von rund drei Monaten – schließe sie also nicht erst ab, wenn der Streit schon läuft.'],
+
+  [['zahnzusatz','zahn','zähne','zahnersatz','implantat','zahnreinigung'],
+   'Eine Zahnzusatzversicherung erstattet einen größeren Teil der Kosten für Zahnersatz, Implantate, Inlays oder professionelle Zahnreinigung, die die gesetzliche Kasse nur teilweise zahlt. Sie ist optional, kann sich aber lohnen, wenn dir gesunde Zähne wichtig sind. Je jünger du abschließt, desto günstiger – und du hast noch keine teuren Vorschäden am Gebiss.'],
+
+  [['geräteschutz','laptop','handy','smartphone','tablet','display','elektronik versich','handyversicherung'],
+   'Ein Geräteschutz sichert teure Elektronik wie Laptop, Smartphone oder Tablet zusätzlich ab – auch bei Sturz, Display-Bruch oder Kurzschluss, was die Hausrat oft nicht abdeckt. Sinnvoll ist er, wenn du dir einen schnellen Neukauf sonst nicht leisten könntest. Prüfe aber zuerst deine Hausratversicherung: Diebstahl und teils auch Beschädigung deiner Geräte sind dort manchmal schon enthalten.'],
+
+  [['versicherungssumme','wie hoch','unterversich','wie viel versichern','richtige summe'],
+   'Die Versicherungssumme deiner Hausrat sollte dem Neuwert all deiner Sachen entsprechen – also dem Betrag, den du brauchst, um nach einem Totalschaden alles neu zu kaufen. Eine grobe Faustregel sind rund 650 € pro Quadratmeter Wohnfläche; genauer ist es, den tatsächlichen Wert zu schätzen (z. B. mit der Bestandsaufnahme hier). Ist die Summe zu niedrig, kürzt der Versicherer im Schadensfall anteilig – das nennt man Unterversicherung. Viele Tarife bieten gegen kleinen Aufpreis einen Unterversicherungsverzicht.'],
+
+  [['selbstbeteilig','selbstbehalt','eigenanteil'],
+   'Die Selbstbeteiligung ist der Betrag, den du im Schadensfall selbst trägst, bevor die Versicherung zahlt. Eine höhere Selbstbeteiligung senkt deinen Monatsbeitrag, kostet dich im Ernstfall aber mehr. Für den Einstieg ist ein Tarif ohne oder mit geringer Selbstbeteiligung meist entspannter, weil du nicht in Vorleistung gehen musst.'],
+
+  [['grobe fahrlässig','fahrlässig','kerze','herd vergessen','tür offen','waschmaschine angelassen'],
+   'Grobe Fahrlässigkeit heißt, dass du eine wichtige Sorgfalt außer Acht lässt – etwa eine brennende Kerze unbeaufsichtigt lässt oder die Wohnungstür offen stehen lässt. Ältere oder sehr günstige Tarife kürzen dann die Leistung. Achte deshalb auf den Zusatz „grobe Fahrlässigkeit mitversichert" – gute Hausrat- und Haftpflichttarife zahlen dann trotzdem den vollen Schaden.'],
+
+  [['fahrrad','e-bike','ebike','fahrraddiebstahl','rad gestohlen'],
+   'Dein Fahrrad ist über die Hausratversicherung gegen Einbruchdiebstahl mitversichert, etwa aus dem verschlossenen Keller. Für Diebstahl unterwegs – wenn das angeschlossene Rad auf der Straße gestohlen wird – brauchst du den Zusatzbaustein „Fahrraddiebstahl". Dieser ist meist bis zu einem Prozentsatz der Versicherungssumme oder einem festen Betrag gedeckt. Gerade bei teuren Rädern oder E-Bikes lohnt sich dieser Zusatz.'],
+
+  [['elementar','naturgefahr','überschwemmung','hochwasser','starkregen','erdrutsch'],
+   'Elementarschäden entstehen durch Naturgefahren wie Überschwemmung, Starkregen, Rückstau, Schneedruck oder Erdrutsch. Diese sind in der normalen Hausrat nicht automatisch enthalten, sondern müssen als Zusatzbaustein „Elementarschäden" eingeschlossen werden. Wegen häufiger Starkregen-Ereignisse ist das oft sinnvoll – besonders in Erdgeschoss- oder Kellerwohnungen.'],
+
+  [['kosten','kostet','preis','beitrag','teuer','günstig','was zahle','wie viel kostet','monatlich','im monat'],
+   'Die Beiträge hängen von der Versicherungsart und deiner Situation ab. Grobe Richtwerte: Privathaftpflicht ab ca. 3 €, Hausrat ab ca. 4 €, Rechtsschutz ca. 8–15 € und eine früh abgeschlossene Berufsunfähigkeit ab ca. 20 € im Monat. Den Basisschutz aus Haftpflicht und Hausrat bekommst du also oft für unter 10 € monatlich. Nutze den Beitragsrechner in dieser App für eine persönliche Schätzung.'],
+
+  [['schaden melden','schaden passiert','was tun wenn','kaputt','beschädigt','gestohlen','eingebrochen'],
+   'Wenn ein Schaden passiert: Melde ihn so schnell wie möglich deiner Versicherung – oft geht das online oder per App. Dokumentiere alles mit Fotos und lege, wenn vorhanden, Kaufbelege bei. Bei Diebstahl oder Einbruch erstattest du zusätzlich Anzeige bei der Polizei und lässt dir das bestätigen. Eine aktuelle Inventarliste (wie in der Bestandsaufnahme) beschleunigt die Regulierung enorm.'],
+
+  [['kündig','wechseln','laufzeit','vertrag beenden','sonderkündig'],
+   'Versicherungen haben meist eine Laufzeit von einem Jahr mit drei Monaten Kündigungsfrist zum Ablauf. Nach einer Beitragserhöhung oder einem Schadensfall hast du zusätzlich ein Sonderkündigungsrecht. Ganz wichtig: Kündige einen alten Vertrag erst, wenn der neue Schutz sicher greift, damit keine Lücke entsteht.'],
+
+  [['wg','mitbewohner','zusammen wohnen','partner versich','zusammenziehen'],
+   'In einer WG ist nicht automatisch jeder über einen Vertrag abgesichert. Eine Hausratversicherung gilt für die Sachen in der Wohnung – in einer Zweck-WG sichert aber jede:r am besten den eigenen Hausrat ab, weil nur namentlich genannte Personen mitversichert sind. Bei der Privathaftpflicht braucht grundsätzlich jede:r einen eigenen Vertrag; nur Ehe- bzw. eingetragene Partner und Familien lassen sich gemeinsam versichern.'],
+
+  [['umzug','einzug','ausziehen','auszug','transport','umziehen'],
+   'Rund um den Auszug sind zwei Policen am wichtigsten: Privathaftpflicht und Hausrat. Deine bestehende Hausrat zieht meist automatisch mit um – melde der Versicherung aber die neue Adresse und Wohnfläche, weil sich der Beitrag ändern kann. Denke außerdem an ein Wohnungsübergabeprotokoll mit Fotos und kläre, ob deine Sachen während des Transports abgesichert sind.'],
+
+  [['was brauche ich','welche versicherung','wichtigste versicherung','womit anfangen','zuerst','muss ich haben','unbedingt brauchen'],
+   'Für deine erste eigene Wohnung gilt eine klare Reihenfolge. Pflicht ist die Krankenversicherung (oft noch über die Familienversicherung). Unverzichtbar sind danach die Privathaftpflicht (schützt vor teuren Schadensersatzforderungen) und die Hausratversicherung (schützt dein Eigentum). Sinnvoll fürs Leben ist außerdem eine früh abgeschlossene Berufsunfähigkeit. Rechtsschutz und Zahnzusatz sind nette Ergänzungen, aber kein Muss.'],
+
+  [['online abschließen','online oder','berater','wo abschließen','beratung','selbst abschließen'],
+   'Einfache Versicherungen wie Hausrat und Privathaftpflicht kannst du bequem und günstig online abschließen – so machen es die meisten jungen Leute. Bei komplexeren Themen wie der Berufsunfähigkeit lohnt sich dagegen oft eine persönliche Beratung, weil Gesundheitsfragen und Bedingungen entscheidend sind. Ein guter Weg: online vergleichen für ein Gefühl von Leistung und Preis und bei Bedarf zusätzlich beraten lassen.'],
+
+  [['vergleichsportal','check24','verivox','anbieter','wo vergleichen','welche firma','empfehlung anbieter'],
+   'Zum Vergleichen eignen sich Portale wie Check24 oder Verivox – dort siehst du viele Tarife nebeneinander. Achte nicht nur auf den Preis, sondern auf die Leistungen (z. B. grobe Fahrlässigkeit, Unterversicherungsverzicht, Fahrraddiebstahl). Bekannte, gut bewertete Anbieter sind etwa ERGO, HUK-Coburg, LVM oder die Allianz. Unter „Meine Schritte" findest du in dieser App direkte Links zu Vergleichsportalen und Anbietern.'],
+
+  [['schüler','12. klasse','abitur','schule','noch zur schule'],
+   'Als Schüler bist du meist noch über deine Eltern abgesichert – sowohl bei der Krankenversicherung (Familienversicherung) als auch häufig bei deren Privathaftpflicht. Sobald du in eine eigene Wohnung ziehst und eine Ausbildung oder ein Studium beginnst, ändert sich das nach und nach. Dann werden eine eigene Hausrat und – sobald du nicht mehr mitversichert bist – eine eigene Privathaftpflicht wichtig. Auch ein früher Abschluss einer Berufsunfähigkeit kann sich schon lohnen.'],
+
+  [['student','studium','studierende'],
+   'Als Student sind vor allem zwei Versicherungen wichtig und günstig: die Privathaftpflicht (oft ab 3 €) und die Hausrat für deine Wohnung. Bei der Krankenversicherung bist du unter 25 in der Regel noch kostenlos über die Familienversicherung – das solltest du beim Auszug aber prüfen. Wenn du langfristig denkst, lohnt sich zusätzlich ein früher Blick auf die Berufsunfähigkeit.'],
+
+  [['azubi','ausbild','lehre'],
+   'Als Azubi hast du ein eigenes Einkommen und damit eine eigene gesetzliche Krankenversicherung, bei der dein Arbeitgeber die Hälfte zahlt. Wichtig sind außerdem die Privathaftpflicht und die Hausrat – beide sind günstig. Und gerade als Azubi solltest du früh über eine Berufsunfähigkeit nachdenken: Jetzt bist du gesund und zahlst die niedrigsten Beiträge.'],
+
+  [['informieren','wo erfahre','mehr wissen','beratung finden','video','quelle'],
+   'Einen guten ersten Überblick bekommst du über neutrale Quellen wie die Verbraucherzentrale und über verständliche Erklärvideos auf YouTube. Unter „Meine Schritte" in dieser App findest du ein empfohlenes Erklär-Video sowie direkte Links zu Vergleichsportalen (Check24, Verivox) und bekannten Anbietern (ERGO, LVM, ING u. a.). So kommst du schnell an verlässliche Informationen.']
+];
+function localAnswer(text){
+  const t=(' '+(text||'').toLowerCase()+' ').replace(/[?!.,;:()"„“]/g,' ');
+  if(t.length<22 && /\b(hi|hallo|hey|moin|servus|guten (tag|morgen|abend)|na)\b/.test(t))
+    return 'Hallo! Ich helfe dir bei allen Fragen rund um Versicherungen für deine erste eigene Wohnung. Frag mich zum Beispiel: „Was brauche ich zuerst?", „Was deckt die Hausrat ab?" oder „Bin ich noch über meine Eltern krankenversichert?".';
+  if(/(danke|dankeschön|merci|passt so|alles klar danke)/.test(t))
+    return 'Sehr gern! Wenn du noch etwas wissen möchtest, frag einfach. Für eine persönliche Beitragsschätzung kannst du auch den Rechner in dieser App nutzen.';
+  let best=null, bestScore=0;
+  for(const [keys,ans] of KB){
+    let s=0; for(const k of keys){ if(t.includes(k)) s++; }
+    if(s>bestScore){ bestScore=s; best=ans; }
+  }
+  if(best) return best;
+  return 'Gute Frage! Ich helfe dir zu allen Versicherungen rund um die erste Wohnung – z. B. Hausrat, Privathaftpflicht, Mieterhaftpflicht, Krankenversicherung, Berufsunfähigkeit und Rechtsschutz. Frag mich gern konkret (etwa „Wie hoch sollte meine Versicherungssumme sein?"), nutze den Rechner für eine Beitragsschätzung oder schau unter „Meine Schritte" für Infoquellen und Anbieter-Links.';
+}
+
+function chip(t){ document.getElementById('chatInput').value=t; sendMsg(); }
+function sendMsg(){
+  const input=document.getElementById('chatInput');
+  const text=input.value.trim(); if(!text) return;
+  input.value='';
+  addMsg('user',text);
+  getReply(text);
+}
+function addMsg(role,text){
+  const win=document.getElementById('chatWin');
+  const mark = role==='bot'
+    ? '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 13.4 9 18 10.5 13.4 12 12 16.5 10.6 12 6 10.5 10.6 9 12 4.5Z"/></svg>'
+    : '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>';
+  const div=document.createElement('div');
+  div.className=`m-row ${role}`;
+  div.innerHTML=`<div class="m-av ${role}">${mark}</div><div class="bubble ${role}">${text.replace(/\n/g,'<br>')}</div>`;
+  win.appendChild(div);
+  win.scrollTop=win.scrollHeight;
+}
+async function getReply(userText){
+  const typing=document.getElementById('typing');
+  typing.classList.add('show');
+  document.getElementById('chatWin').scrollTop=99999;
+  chatHistory.push({role:'user',content:userText});
+
+  let reply=null;
+  try{
+    const ctrl=new AbortController();
+    const to=setTimeout(()=>ctrl.abort(),9000);
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      signal:ctrl.signal,
+      body:JSON.stringify({
+        model:'claude-sonnet-4-6',
+        max_tokens:1000,
+        system:SYSTEM_PROMPT,
+        messages:chatHistory
+      })
+    });
+    clearTimeout(to);
+    if(res.ok){
+      const data=await res.json();
+      const txt=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\n').trim();
+      if(txt) reply=txt;
+    }
+  }catch(e){ /* offline / standalone → Fallback */ }
+
+  if(!reply) reply=localAnswer(userText);
+  chatHistory.push({role:'assistant',content:reply});
+  typing.classList.remove('show');
+  addMsg('bot',reply);
+}
+
+/* ════ BESTANDSAUFNAHME ════ */
+const CAT_ICON = {
+  'Möbel':'<path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M3 11h18a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1Z"/><path d="M6 18v2M18 18v2"/>',
+  'Elektronik':'<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20"/>',
+  'Kleidung':'<path d="m8.5 4-5 3 2 3 2.5-1.2V20a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8.8L18.5 10l2-3-5-3a3 3 0 0 1-7 0Z"/>',
+  'Schmuck':'<path d="M6 3h12l4 6-10 12L2 9l4-6Z"/><path d="M3 9h18M9 3 7 9l5 12M15 3l2 6-5 12"/>',
+  'Sport':'<rect x="4" y="9" width="3" height="6" rx="1"/><rect x="17" y="9" width="3" height="6" rx="1"/><path d="M7 12h10"/><path d="M2.5 11v2M21.5 11v2"/>',
+  'Küche':'<path d="M6 3v7a2 2 0 0 0 4 0V3"/><path d="M8 12v9"/><path d="M16 3c-1.4 0-2.3 1.9-2.3 4.5S14.6 12 16 12v9"/>',
+  'Sammler':'<path d="M8 21h8M12 17v4M6 4h12v4a6 6 0 0 1-12 0V4Z"/><path d="M6 6H4a2 2 0 0 0 2 2.5M18 6h2a2 2 0 0 1-2 2.5"/>',
+  'Sonstiges':'<path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/>'
+};
+const catSvg = c => `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${CAT_ICON[c]||CAT_ICON['Sonstiges']}</svg>`;
+
+const QUICK = [
+  ['Laptop','Elektronik',900],['Smartphone','Elektronik',700],['Fernseher','Elektronik',600],
+  ['Sofa','Möbel',800],['Bett','Möbel',500],['Kleiderschrank','Möbel',400],
+  ['Waschmaschine','Küche',500],['Fahrrad','Sonstiges',600],['Kleidung gesamt','Kleidung',1500]
+];
+
+let inventory = [];
+const CONF_MIN = 60; // KI-Sicherheit unter diesem Wert (%) gilt als zu unsicher: Treffer wird verworfen (Regel: <60 verwerfen, 60–79 unsicher, ≥80 übernehmen)
+
+function renderQuick(){
+  document.getElementById('quickChips').innerHTML = QUICK.map((q,i)=>
+    `<button class="qchip" onclick="quickAdd(${i})"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>${q[0]}</button>`
+  ).join('');
+}
+function invDetailTags(d){
+  if(!d) return '';
+  let t='';
+  if(d.conf!=null){
+    const c=d.conf;
+    const cls = c>=80?'cf-hi' : (c>=60?'cf-md':'cf-lo');
+    const label = c>=80 ? ('KI-Sicherheit '+c+'%') : ('Unsicher '+c+'% – bitte prüfen');
+    t+=`<span class="itag ${cls}" title="Selbsteinschätzung der KI, wie eindeutig der Gegenstand erkennbar ist – kein garantierter Wert. Bitte gegenprüfen.">${label}</span>`;
+  }
+  if(d.zustand){ const z=String(d.zustand).toLowerCase(); const cls=/(beschädigt|defekt)/.test(z)?'warn':(/stark/.test(z)?'cf-md':(/(neuware|neuwertig|gut)/.test(z)?'ok':'neu')); t+=`<span class="itag ${cls}">${d.zustand}</span>`; }
+  if(d.marke){ t+=`<span class="itag">${d.marke}</span>`; }
+  if(d.wertstufe){ const m={hoch:'hochwertig',mittel:'mittlerer Wert',gering:'geringwertig'}; t+=`<span class="itag">${m[d.wertstufe]||d.wertstufe}</span>`; }
+  if(d.echtheit==='unsicher'){ t+=`<span class="itag auth" title="Hinweis, kein Beweis – eine KI kann Fälschungen nicht sicher erkennen">Echtheit unsicher</span>`; }
+  return t;
+}
+function renderInventory(){
+  const list=document.getElementById('invList');
+  if(inventory.length===0){
+    list.innerHTML=`<div class="inv-empty">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+      <b>Noch keine Gegenstände erfasst</b>
+      <p>Scanne deinen ersten Gegenstand oder füge ihn manuell hinzu.</p>
+    </div>`;
+  } else {
+    list.innerHTML = inventory.map((it,i)=>{
+      const d=it.details;
+      const hasRange=(d&&d.min&&d.max);
+      const range=hasRange?`<small class="irange">Spanne ${d.min.toLocaleString('de-DE')}–${d.max.toLocaleString('de-DE')} €</small>`:'';
+      const valLabel=hasRange?`Ø&nbsp;${it.val.toLocaleString('de-DE')} €`:`${it.val.toLocaleString('de-DE')} €`;
+      const demoBadge = it.demo ? `<span class="itag demo" title="Beispiel-Erkennung im Demo-Modus – keine echte KI-Analyse">Beispiel</span>` : '';
+      return `<div class="inv-item">
+        <div class="inv-ic">${catSvg(it.cat)}</div>
+        <div class="info"><b>${it.name}</b><span>${it.cat}</span>${(demoBadge||invDetailTags(d))?`<div class="itags">${demoBadge}${invDetailTags(d,true)}</div>`:''}</div>
+        <div class="val"${hasRange?' title="Durchschnittlicher Schätzwert (Mittelwert der Spanne) – bitte gegenprüfen"':''}>${valLabel}${range}</div>
+        <button class="inv-del" onclick="removeItem(${i})" title="Entfernen"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M7 7l1 13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1l1-13"/></svg></button>
+      </div>`;
+    }).join('');
+  }
+  const total=inventory.reduce((s,it)=>s+(Number(it.val)||0),0);
+  document.getElementById('invTotal').textContent=total.toLocaleString('de-DE');
+  document.getElementById('invCount').textContent=inventory.length;
+}
+function addItem(name,cat,val,details,demo){
+  if(!name) return;
+  const cats=['Möbel','Elektronik','Kleidung','Schmuck','Sport','Küche','Sammler','Sonstiges'];
+  inventory.push({name:String(name).slice(0,40), cat:cats.includes(cat)?cat:'Sonstiges', val:Math.max(0,Math.round(Number(val)||0)), details:details||null, demo:!!demo});
+  renderInventory();
+}
+function addManual(){
+  const name=document.getElementById('invName').value.trim();
+  const cat=document.getElementById('invCat').value;
+  const val=parseFloat(document.getElementById('invVal').value)||0;
+  const brand=document.getElementById('invBrand').value.trim();
+  const cond=document.getElementById('invCond').value;
+  if(!name){ document.getElementById('invName').focus(); return; }
+  let details=null;
+  if(brand||cond){ details={}; if(brand) details.marke=brand.slice(0,30); if(cond) details.zustand=cond; }
+  addItem(name,cat,val,details);
+  document.getElementById('invName').value='';
+  document.getElementById('invVal').value='';
+  document.getElementById('invBrand').value='';
+  document.getElementById('invCond').value='';
+  closeBrandList();
+  document.getElementById('invName').focus();
+}
+function quickAdd(i){ const q=QUICK[i]; addItem(q[0],q[1],q[2]); }
+function removeItem(i){ inventory.splice(i,1); renderInventory(); }
+
+/* Marken-Datenbank (Luxus, Mittelklasse, Discounter) für die Autocomplete-Suche */
+const BRANDS=["Adidas","AEG","Acer","Apple","Aldi (Esmara)","Armani","Asus","Balenciaga","Bench","Bershka","BoConcept","Bogner","Bose","Bosch","Burberry","C&A","Calvin Klein","Camp David","Carhartt","Casio","Champion","Chanel","Columbia","Converse","COS","Daniel Wellington","Decathlon (Quechua)","Dell","Diesel","Dior","Dyson","Ernsting's family","Esprit","Fossil","Gucci","G-Star","H&M","Hermès","Höffner","HP","Huawei","Hugo Boss","Hülsta","IKEA","Jack & Jones","Jack Wolfskin","JBL","Kik","Lacoste","Lenovo","Levi's","LG","Lidl","Louis Vuitton","Mammut","Mango","Marc O'Polo","Miele","Microsoft","Moncler","New Balance","Nike","Nintendo","NKD","Only","Patagonia","Pepe Jeans","Philips","PlayStation","Poco","Polo Ralph Lauren","Prada","Primark","Puma","Ralph Lauren","Roller","Rolex","s.Oliver","Saint Laurent","Salomon","Samsung","Sennheiser","Shein","Siemens","Sony","Stone Island","Superdry","Swatch","Takko","The North Face","Tissot","Tom Tailor","Tommy Hilfiger","Uniqlo","Under Armour","USM","Vans","Vero Moda","Versace","Vitra","Xbox","Xiaomi","XXXLutz","Zalando","Zara"];
+let brandSugg=[];
+function brandEsc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function brandSuggest(q){
+  const list=document.getElementById('brandList');
+  if(!list) return;
+  q=(q||'').trim().toLowerCase();
+  if(q.length<1){ closeBrandList(); return; }
+  const starts=[], incl=[];
+  for(const b of BRANDS){ const lb=b.toLowerCase(); if(lb.startsWith(q)) starts.push(b); else if(lb.includes(q)) incl.push(b); }
+  brandSugg=[...starts, ...incl].slice(0,8);
+  if(!brandSugg.length){ list.innerHTML='<div class="brand-none">Keine Marke gefunden – du kannst sie einfach eintippen</div>'; list.classList.add('show'); return; }
+  list.innerHTML=brandSugg.map((b,i)=>`<button type="button" onmousedown="selectBrand(${i})">${brandEsc(b)}</button>`).join('');
+  list.classList.add('show');
+}
+function selectBrand(i){ const b=brandSugg[i]; if(b) document.getElementById('invBrand').value=b; closeBrandList(); }
+function closeBrandList(){ const l=document.getElementById('brandList'); if(l){ l.classList.remove('show'); l.innerHTML=''; } }
+function useInventoryValue(){
+  const total=inventory.reduce((s,it)=>s+(Number(it.val)||0),0);
+  document.getElementById('wert').value=total;
+  goCalc('beitrag');
+  berechnen();
+}
+
+/* Schnellschätzung nach Haushalts-Niveau – reine Frontend-Logik (keine KI nötig).
+   Versicherungssumme = Wohnfläche × Richtwert je m². ~650 €/m² ist in DE der übliche Standardwert. */
+const NIVEAU=[
+  {key:'basis',    name:'Basis',    desc:'Sparsam eingerichtet – WG-Zimmer, erste Wohnung', rate:300},
+  {key:'standard', name:'Standard', desc:'Normal ausgestattet – Möbel, Technik, Küche',      rate:650},
+  {key:'premium',  name:'Premium',  desc:'Hochwertig – viel Technik, Designmöbel, Wertsachen', rate:1000}
+];
+let niveauSel='standard';
+function setNiveau(k){ niveauSel=k; renderNiveau(); }
+function niveauFlaeche(){ return Math.max(0, Number((document.getElementById('nivFlaeche')||{}).value)||0); }
+function renderNiveau(){
+  const tiers=document.getElementById('niveauTiers'); if(!tiers) return;
+  const m2=niveauFlaeche();
+  tiers.innerHTML=NIVEAU.map(t=>{
+    const sum=Math.round(m2*t.rate), sel=t.key===niveauSel;
+    return '<button type="button" class="niv-tier'+(sel?' sel':'')+'" onclick="setNiveau(\''+t.key+'\')">'
+      +'<span class="niv-name">'+t.name+'</span>'
+      +'<span class="niv-desc">'+t.desc+'</span>'
+      +'<span class="niv-rate">ca. '+t.rate+' €/m²</span>'
+      +'<span class="niv-sum">'+sum.toLocaleString('de-DE')+' €</span></button>';
+  }).join('');
+  const cur=NIVEAU.find(t=>t.key===niveauSel), sum=Math.round(m2*cur.rate);
+  document.getElementById('niveauResult').innerHTML=
+    '<div class="niv-res-row"><span>Geschätzte Versicherungssumme (<b>'+cur.name+'</b>, '+m2+' m²)</span>'
+    +'<b class="niv-res-val">'+sum.toLocaleString('de-DE')+' €</b></div>'
+    +'<button class="btn btn-primary niv-take" type="button" onclick="useNiveauValue()">Diesen Wert in den Rechner übernehmen</button>'
+    +'<p class="niv-note">Orientierungswerte nach Wohnfläche (üblich sind in Deutschland rund 650 €/m² für einen Standardhaushalt). Genauer wird\'s mit der Gegenstands-Liste unten.</p>';
+}
+function useNiveauValue(){
+  const m2=niveauFlaeche(), cur=NIVEAU.find(t=>t.key===niveauSel), sum=Math.round(m2*cur.rate);
+  document.getElementById('wert').value=sum;
+  const fl=document.getElementById('flaeche'); if(fl && m2) fl.value=m2;
+  goCalc('beitrag');
+  berechnen();
+}
+
+/* Foto-Scan via Vision-API mit Fallback */
+/* Bereitet ein Foto für die KI auf: dekodiert robust (auch HEIC vom iPhone via createImageBitmap),
+   skaliert herunter und liefert eine JPEG-DataURL. Scheitert das Dekodieren, wird – sofern das
+   Format von der KI unterstützt wird (JPEG/PNG/WebP/GIF) – das Originalbild als Fallback gesendet. */
+async function downscale(file, maxDim, quality){
+  const drawToJpeg = (src, w, h) => {
+    let nw=w, nh=h;
+    if(w>h && w>maxDim){ nh=Math.round(h*maxDim/w); nw=maxDim; }
+    else if(h>maxDim){ nw=Math.round(w*maxDim/h); nh=maxDim; }
+    const cv=document.createElement('canvas'); cv.width=nw||1; cv.height=nh||1;
+    cv.getContext('2d').drawImage(src,0,0,cv.width,cv.height);
+    return cv.toDataURL('image/jpeg', quality);
+  };
+  // 1) Moderner Decoder – verarbeitet die meisten Formate inkl. HEIC auf iOS/Safari
+  if(typeof createImageBitmap==='function'){
+    try{
+      const bmp=await createImageBitmap(file);
+      const url=drawToJpeg(bmp, bmp.width, bmp.height);
+      if(bmp.close){ try{ bmp.close(); }catch(_){} }
+      return url;
+    }catch(_){ /* nächster Versuch */ }
+  }
+  // 2) Fallback: über ein <img>-Element dekodieren
+  try{
+    const img=await new Promise((resolve,reject)=>{
+      const im=new Image(); const u=URL.createObjectURL(file);
+      im.onload=()=>{ URL.revokeObjectURL(u); resolve(im); };
+      im.onerror=()=>{ URL.revokeObjectURL(u); reject(new Error('decode')); };
+      im.src=u;
+    });
+    return drawToJpeg(img, img.naturalWidth||img.width, img.naturalHeight||img.height);
+  }catch(_){ /* letzter Fallback */ }
+  // 3) Letzter Ausweg: Originalbild senden, falls die KI das Format unterstützt
+  if(/^image\/(jpeg|jpg|png|webp|gif)$/i.test(file.type||'')){
+    const b64=await fileToB64(file);
+    return 'data:'+(file.type||'image/jpeg')+';base64,'+b64;
+  }
+  throw new Error('image-decode-failed');
+}
+function setScanStatus(html,isErr,isDemo){
+  const el=document.getElementById('scanStatus');
+  el.innerHTML=html; el.classList.add('show');
+  el.classList.toggle('err',!!isErr);
+  el.classList.toggle('demo',!!isDemo);
+}
+function hideScanStatus(ms){ setTimeout(()=>document.getElementById('scanStatus').classList.remove('show'),ms); }
+
+function fileToB64(file){
+  return new Promise((resolve,reject)=>{
+    const r=new FileReader();
+    r.onload=()=>resolve(String(r.result).split(',')[1]);
+    r.onerror=()=>reject();
+    r.readAsDataURL(file);
+  });
+}
+
+/* Extrahiert ein JSON-Objekt oder -Array aus einer Modell-Antwort und liefert eine Liste von Gegenständen */
+function parseItems(txt){
+  if(!txt) return [];
+  let s=txt.replace(/```json/gi,'').replace(/```/g,'').trim();
+  const firstA=s.indexOf('['), firstO=s.indexOf('{');
+  let start=-1, open='[', close=']';
+  if(firstA>=0 && (firstO<0 || firstA<firstO)){ start=firstA; open='['; close=']'; }
+  else if(firstO>=0){ start=firstO; open='{'; close='}'; }
+  if(start<0) return [];
+  const end=s.lastIndexOf(close);
+  if(end<=start) return [];
+  let parsed;
+  try{ parsed=JSON.parse(s.slice(start,end+1)); }catch(e){ return []; }
+  let arr=[];
+  if(Array.isArray(parsed)) arr=parsed;
+  else if(parsed && typeof parsed==='object'){
+    if(Array.isArray(parsed.gegenstaende)) arr=parsed.gegenstaende;
+    else if(Array.isArray(parsed.items)) arr=parsed.items;
+    else if(parsed.name) arr=[parsed];
+  }
+  const num=v=>Number(String(v ?? '').toString().replace(/[^\d.,]/g,'').replace(',','.'))||0;
+  return arr.filter(it=>it && it.name).map(it=>{
+    const mid=num(it.wert_mittel ?? it.neuwert ?? it.wert ?? it.value);
+    const lo=num(it.wert_min), hi=num(it.wert_max);
+    const d={};
+    if(lo>0 && hi>0 && hi>lo){ d.min=Math.round(lo); d.max=Math.round(hi); }
+    const allow={ zustand:['Neuware','Neuwertig','Gebraucht','Stark gebraucht','Beschädigt','Defekt'], marke:['Marke','Mittelklasse','No-Name','unbekannt'], wertstufe:['hoch','mittel','gering'], echtheit:['unauffällig','unsicher','nicht_pruefbar'] };
+    if(allow.zustand.includes(it.zustand)) d.zustand=it.zustand;
+    if(allow.marke.includes(it.marke) && it.marke!=='unbekannt') d.marke=it.marke;
+    if(allow.wertstufe.includes(it.wertstufe)) d.wertstufe=it.wertstufe;
+    if(it.echtheit==='unsicher') d.echtheit='unsicher';
+    const cf=Math.round(num(it.sicherheit ?? it.confidence));
+    if(cf>0) d.conf=Math.max(0,Math.min(100,cf));
+    return { name:String(it.name), kategorie:it.kategorie||it.category||'Sonstiges', neuwert:mid, details:Object.keys(d).length?d:null };
+  });
+}
+
+const PROMPT_SINGLE='Du analysierst ein Foto für eine Hausrat-Bestandsaufnahme. Identifiziere den einen wichtigsten, klar sichtbaren Gegenstand und benenne den Gegenstandstyp konkret (z. B. „Laptop", „Sofa", „Sneaker", „Winterjacke"). Gib nur dann {} zurück, wenn das Bild leer/unbrauchbar ist oder wirklich kein Gegenstand erkennbar ist. Erfinde NICHTS, was nicht im Bild zu sehen ist. Gehe gedanklich Schritt für Schritt vor: 1) Was ist eindeutig zu sehen? 2) Welche Kategorie? 3) Nur bei sichtbarem Logo/Etikett: welche Marke? 4) Welcher Zustand? 5) Welcher vorsichtige Wertbereich? Antworte AUSSCHLIESSLICH mit einem JSON-Objekt ohne weiteren Text und ohne Markdown, exakt in diesem Format: {"name":"kurze deutsche Bezeichnung","kategorie":"Möbel|Elektronik|Kleidung|Schmuck|Sport|Küche|Sammler|Sonstiges","wert_min":Zahl,"wert_mittel":Zahl,"wert_max":Zahl,"zustand":"Neuware|Neuwertig|Gebraucht|Stark gebraucht|Beschädigt|Defekt","marke":"Marke|Mittelklasse|No-Name|unbekannt","wertstufe":"hoch|mittel|gering","echtheit":"unauffällig|unsicher|nicht_pruefbar","sicherheit":Zahl}. Strenge Regeln: (1) sicherheit ist deine ehrliche Selbsteinschätzung von 0–100, wie eindeutig der Gegenstand identifizierbar ist; bei unscharfen, verdeckten oder mehrdeutigen Bildern niedrig (unter 40). (2) Setze marke NUR dann auf "Marke" oder "Mittelklasse", wenn ein Logo, ein Etikett oder ein eindeutiges charakteristisches Merkmal klar sichtbar ist – sonst IMMER "unbekannt". Nimm NIEMALS unbegründet eine Premium- oder Designermarke an. (3) wert_mittel ist ein realistischer, eher vorsichtiger DURCHSCHNITTLICHER Wiederbeschaffungswert in Euro (Mittelwert einer plausiblen Spanne, KEINE Höchstwerte); wert_min/wert_max bilden die Spanne. Ohne erkennbare Marke nutze typische No-Name-/Mittelklasse-Preise. (4) echtheit ist standardmäßig "nicht_pruefbar"; setze "unsicher" nur bei sichtbaren Auffälligkeiten und behaupte NIEMALS sicher eine Fälschung. (5) Wähle zustand aus den genannten sechs Stufen anhand des sichtbaren Zustands und sichtbarer Mängel/Gebrauchsspuren; berücksichtige den Zustand vorsichtig im Wert.';
+const PROMPT_ROOM='Dies ist das Foto eines Raumes für eine Hausrat-Bestandsaufnahme. Erfasse NUR Gegenstände, die deutlich und eindeutig im Bild sichtbar sind. Erfinde KEINE Gegenstände und rate nicht, was außerhalb des Bildausschnitts sein könnte – im Zweifel weglassen. Schließe teilweise verdeckte, unscharfe, weit entfernte oder mehrdeutige Objekte aus oder gib ihnen eine niedrige sicherheit. Achte besonders auf klar sichtbare Wertgegenstände (Schmuck, Uhren, Elektronik, Fahrräder, Musikinstrumente, Sammlerstücke) und erfasse sie zuverlässig – aber NUR, wenn sie eindeutig im Bild zu sehen sind, niemals geraten. Bewerte jeden Gegenstand gedanklich schrittweise: erkennen → Kategorie → Marke nur bei sichtbarem Logo → Zustand → vorsichtiger Wertbereich. Antworte AUSSCHLIESSLICH mit einem JSON-Array ohne weiteren Text und ohne Markdown: [{"name":"...","kategorie":"Möbel|Elektronik|Kleidung|Schmuck|Sport|Küche|Sammler|Sonstiges","wert_min":Zahl,"wert_mittel":Zahl,"wert_max":Zahl,"zustand":"Neuware|Neuwertig|Gebraucht|Stark gebraucht|Beschädigt|Defekt","marke":"Marke|Mittelklasse|No-Name|unbekannt","wertstufe":"hoch|mittel|gering","echtheit":"unauffällig|unsicher|nicht_pruefbar","sicherheit":Zahl}]. Strenge Regeln: sicherheit ist je Gegenstand deine ehrliche Selbsteinschätzung 0–100, wie eindeutig er erkennbar ist (bei Zweifeln unter 40). Setze marke nur bei klar sichtbarem Logo/Etikett, sonst "unbekannt"; nimm NIEMALS unbegründet eine Premium-Marke an. wert_mittel ist je Gegenstand ein realistischer, vorsichtiger DURCHSCHNITTLICHER Wiederbeschaffungswert in Euro (kein Höchstwert); wert_min/wert_max bilden die Spanne. echtheit standardmäßig "nicht_pruefbar"; behaupte NIEMALS sicher eine Fälschung. Liste lieber wenige eindeutig erkennbare Gegenstände als viele unsichere – höchstens 12.';
+const PROMPT_DOC='Dies ist eine Datei, z. B. eine Rechnung, ein Kassenbon oder eine Inventarliste. Extrahiere die aufgeführten Gegenstände mit Wert für eine Hausrat-Bestandsaufnahme. Antworte AUSSCHLIESSLICH mit einem JSON-Array ohne weiteren Text und ohne Markdown: [{"name":"...","kategorie":"Möbel|Elektronik|Kleidung|Küche|Sonstiges","wert_mittel":Zahl}]. wert_mittel ist der jeweils angegebene oder realistisch geschätzte Wert in Euro als reine Zahl.';
+
+/* Übersetzt eine Fehlerursache in eine präzise Meldung. Es wird NIE etwas erfunden. */
+function scanError(was, reason){
+  let msg;
+  switch(reason){
+    case 'auth':       msg = was+' konnte nicht analysiert werden: Die KI-Verbindung ist nicht freigeschaltet (API-Schlüssel fehlt oder ist ungültig). Bitte den Schlüssel auf dem Server hinterlegen.'; break;
+    case 'rate':       msg = was+' konnte nicht analysiert werden: Gerade sind zu viele Anfragen unterwegs (Rate-Limit). Bitte ein, zwei Minuten warten und erneut versuchen.'; break;
+    case 'overloaded': msg = was+' konnte nicht analysiert werden: Der KI-Dienst ist kurz überlastet. Bitte gleich noch einmal versuchen.'; break;
+    case 'toolarge':   msg = was+' ist zu groß für die Analyse. Versuch ein kleineres Foto oder ein kürzeres Video.'; break;
+    case 'timeout':    msg = 'Die Analyse hat zu lange gedauert (Zeitüberschreitung). Bitte erneut versuchen oder ein kleineres, schärferes Foto verwenden.'; break;
+    default:           msg = was+' konnte nicht automatisch analysiert werden – aktuell besteht keine Verbindung zur KI-Analyse.';
+  }
+  setScanStatus('<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg> '+msg+' Du kannst deine Gegenstände jederzeit unten manuell eintragen – mit Marke und Zustand wird die Schätzung genauso belastbar.', false);
+  hideScanStatus(9500);
+}
+/* KI war erreichbar, hat aber nichts Eindeutiges erkannt. */
+function scanNothingFound(was){
+  setScanStatus('<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg> In '+was+' wurde kein Gegenstand eindeutig erkannt. Versuch ein näheres, gut ausgeleuchtetes Foto vom einzelnen Gegenstand – oder trag ihn unten manuell ein.', false);
+  hideScanStatus(8500);
+}
+/* Bild/Datei konnte nicht gelesen werden (z. B. nicht unterstütztes Format). */
+function scanReadError(){
+  setScanStatus('<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg> Das Bild konnte nicht gelesen werden. Versuch ein anderes Foto (JPG/PNG) – oder trag den Gegenstand unten manuell ein.', false);
+  hideScanStatus(8500);
+}
+
+const sleep = ms => new Promise(r=>setTimeout(r,ms));
+
+/* Gemeinsamer API-Aufruf mit Resilienz: probiert zuerst die eigene Server-Route /api/analyze,
+   dann den Direktaufruf (im Claude-Vorschaufenster eingebaut). Bei 429/5xx/Timeout wird mit
+   exponentiellem Backoff erneut versucht. Liefert {reached, items, reason}, wobei reason die
+   Fehlerursache benennt: ok | auth | rate | overloaded | toolarge | timeout | offline. */
+async function requestItems(block, prompt){
+  const body=JSON.stringify({
+    model:'claude-sonnet-4-6',
+    max_tokens:1000,
+    messages:[{role:'user',content:[block,{type:'text',text:prompt}]}]
+  });
+  const endpoints=['/api/analyze','https://api.anthropic.com/v1/messages'];
+  let reason='offline';
+  for(const url of endpoints){
+    for(let attempt=0; attempt<3; attempt++){
+      let status=0, data=null, networkErr=false, timedOut=false;
+      try{
+        const ctrl=new AbortController();
+        const to=setTimeout(()=>{ timedOut=true; ctrl.abort(); }, 40000); // Timeout-Management
+        const res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},signal:ctrl.signal,body});
+        clearTimeout(to);
+        status=res.status;
+        try{ data=await res.json(); }catch(_){ data=null; }
+      }catch(e){ networkErr=true; }
+
+      // Erfolg: gültige KI-Antwort
+      if(status>=200 && status<300 && data && Array.isArray(data.content)){
+        const txt=data.content.filter(b=>b.type==='text').map(b=>b.text).join('').trim();
+        return {reached:true, items:parseItems(txt), reason:'ok'};
+      }
+      // Fehlerklassen – präzise unterscheiden
+      if(status===413){ return {reached:false, items:[], reason:'toolarge'}; }                  // Datei zu groß (anderer Endpunkt hilft nicht)
+      if(timedOut){ reason='timeout'; await sleep(700*(attempt+1)); continue; }                  // Zeitüberschreitung → erneut
+      if(networkErr){ break; }                                                                   // Netzwerk/CORS weg → nächster Endpunkt (Ursache nicht überschreiben)
+      if(status===401 || status===403){ reason='auth'; break; }                                  // Schlüssel fehlt/ungültig → nächster Endpunkt
+      if(status===404){ break; }                                                                 // Route nicht vorhanden → nächster Endpunkt
+      if(status===429){ reason='rate'; await sleep(800*Math.pow(2,attempt)); continue; }         // Rate-Limit → Backoff + erneut
+      if(status>=500){ reason='overloaded'; await sleep(800*Math.pow(2,attempt)); continue; }    // 5xx (überlastet) → Backoff + erneut
+      break;                                                                                     // unerwarteter Status → nächster Endpunkt
+    }
+  }
+  return {reached:false, items:[], reason};
+}
+
+/* Analysiert eine einzelne Datei (Bild oder PDF) und liefert {reached, count, imgError} */
+async function analyzeOne(file, mode){
+  const isPdf = file.type==='application/pdf' || /\.pdf$/i.test(file.name||'');
+  let block, prompt;
+  try{
+    if(isPdf){
+      const b64=await fileToB64(file);
+      block={type:'document',source:{type:'base64',media_type:'application/pdf',data:b64}};
+      prompt=PROMPT_DOC;
+    }else{
+      const dataUrl=await downscale(file,1280,0.82);
+      const m=/^data:([^;]+);base64,(.*)$/.exec(dataUrl);
+      block={type:'image',source:{type:'base64',media_type:(m?m[1]:'image/jpeg'),data:(m?m[2]:dataUrl.split(',')[1])}};
+      prompt= mode==='single' ? PROMPT_SINGLE : PROMPT_ROOM;
+    }
+  }catch(e){ return {reached:false, count:0, imgError:true, reason:'read'}; }
+  const r=await requestItems(block, prompt);
+  if(!r.reached) return {reached:false, count:0, dropped:0, reason:r.reason};
+  let items=r.items, dropped=0;
+  const okConf = it => !it.details || it.details.conf==null || it.details.conf>=CONF_MIN;
+  if(mode==='single'){
+    // Einzelfoto: der bewusst fotografierte Gegenstand wird übernommen (ggf. mit Unsicher-Hinweis), nicht verworfen
+    items=items.slice(0,1);
+  }else{
+    // Plausibilitätsprüfung: unsichere Treffer (< 60 %) aussortieren – senkt Falsch-Positive
+    const before=items.length;
+    items=items.filter(okConf);
+    dropped=before-items.length;
+  }
+  items.forEach(it=>addItem(it.name,it.kategorie,it.neuwert,it.details));
+  return {reached:true, count:items.length, dropped, reason:'ok'};
+}
+
+/* Extrahiert ein Standbild aus der Mitte eines Videos als JPEG-DataURL */
+function videoFrame(file){
+  return new Promise((resolve,reject)=>{
+    let url;
+    try{ url=URL.createObjectURL(file); }catch(e){ return reject(e); }
+    const v=document.createElement('video');
+    v.preload='metadata'; v.muted=true; v.playsInline=true;
+    const done=()=>{
+      try{
+        const w=Math.min(1280, v.videoWidth||640);
+        const sc = (v.videoWidth? w/v.videoWidth : 1);
+        const c=document.createElement('canvas');
+        c.width=w; c.height=Math.round((v.videoHeight||480)*sc);
+        c.getContext('2d').drawImage(v,0,0,c.width,c.height);
+        URL.revokeObjectURL(url);
+        resolve(c.toDataURL('image/jpeg',0.82));
+      }catch(e){ URL.revokeObjectURL(url); reject(e); }
+    };
+    v.onseeked=done;
+    v.onloadeddata=()=>{ try{ v.currentTime=Math.min(1,(v.duration||2)/2); }catch(e){ done(); } };
+    v.onerror=()=>{ try{URL.revokeObjectURL(url);}catch(e){} reject(new Error('video')); };
+    v.src=url;
+  });
+}
+
+/* Video-Upload: zieht ein Standbild und wertet es wie ein Raum-Foto aus */
+async function analyzeVideo(input){
+  const file=(input.files||[])[0];
+  if(input.value!==undefined) input.value='';
+  if(!file) return;
+  setScanStatus('<span class="spinner"></span> Video wird analysiert …',false);
+  let dataUrl;
+  try{ dataUrl=await videoFrame(file); }
+  catch(e){ scanReadError(); return; }
+  const block={type:'image',source:{type:'base64',media_type:'image/jpeg',data:dataUrl.split(',')[1]}};
+  const r=await requestItems(block, PROMPT_ROOM);
+  if(!r.reached){ scanError('Das Video', r.reason); return; }
+  const before=r.items.length;
+  const keep=r.items.filter(it=> !it.details || it.details.conf==null || it.details.conf>=CONF_MIN);
+  const dropped=before-keep.length;
+  keep.forEach(it=>addItem(it.name,it.kategorie,it.neuwert,it.details));
+  if(keep.length>0){
+    const word = keep.length===1 ? 'Gegenstand' : 'Gegenstände';
+    const note = dropped>0 ? ' · '+dropped+' unsichere'+(dropped===1?'r':'')+' Treffer aussortiert' : '';
+    setScanStatus('<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#11814a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg> '+keep.length+' '+word+' aus dem Video erkannt'+note+'. Bitte kurz gegenprüfen.',false);
+    hideScanStatus(5200);
+  }else{
+    scanNothingFound('dem Video');
+  }
+}
+
+/* Drag & Drop für den Video-Bereich */
+function videoDrop(ev){
+  ev.preventDefault();
+  const zone=document.getElementById('videoZone');
+  if(zone) zone.classList.remove('drag');
+  const file=[...(ev.dataTransfer?.files||[])].find(f=>/^video\//.test(f.type));
+  if(file) analyzeVideo({files:[file]});
+  else setScanStatus('Bitte eine Videodatei ablegen.',true), hideScanStatus(3000);
+}
+function videoDragOver(ev){ ev.preventDefault(); const z=document.getElementById('videoZone'); if(z) z.classList.add('drag'); }
+function videoDragLeave(ev){ const z=document.getElementById('videoZone'); if(z) z.classList.remove('drag'); }
+
+/* Produkt-/Shop-/Auktions-Link: echte Auswertung braucht einen Server, der die Seite abruft (CORS) */
+function analyzeLink(){
+  const inp=document.getElementById('invLink');
+  const url=(inp.value||'').trim();
+  if(!url){ inp.focus(); return; }
+  inp.value='';
+  scanError('Der Link', 'offline');
+}
+
+async function analyzeFiles(input, mode){
+  const files=[...input.files];
+  input.value='';
+  if(!files.length) return;
+  const toProcess = mode==='upload' ? files : [files[0]];
+  const label = mode==='single' ? 'Gegenstand wird erkannt …'
+              : mode==='room' ? 'Raum wird analysiert …'
+              : (toProcess.length>1 ? toProcess.length+' Dateien werden ausgewertet …' : 'Datei wird ausgewertet …');
+  setScanStatus('<span class="spinner"></span> '+label,false);
+
+  let total=0, dropped=0, reachedAny=false, imgErr=false, failReason='offline';
+  for(const f of toProcess){
+    const res=await analyzeOne(f, mode);
+    total+=res.count;
+    dropped+=(res.dropped||0);
+    if(res.reached) reachedAny=true;
+    if(res.imgError) imgErr=true;
+    if(!res.reached && res.reason && res.reason!=='read') failReason=res.reason;
+  }
+
+  if(total>0){
+    const word = total===1 ? 'Gegenstand' : 'Gegenstände';
+    const note = dropped>0 ? ' · '+dropped+' unsichere'+(dropped===1?'r':'')+' Treffer aussortiert' : '';
+    setScanStatus('<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#11814a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg> '+total+' '+word+' hinzugefügt'+note+'. Bitte kurz gegenprüfen.',false);
+    hideScanStatus(5200);
+  }else if(reachedAny){
+    scanNothingFound(mode==='room' ? 'dem Raum-Foto' : (mode==='upload' ? 'der Datei' : 'dem Foto'));
+  }else if(imgErr){
+    scanReadError();
+  }else{
+    scanError(mode==='room' ? 'Der Raum' : (mode==='upload' ? 'Die Datei' : 'Der Gegenstand'), failReason);
+  }
+}
+
+
+/* init – jeder Schritt einzeln gekapselt, damit nichts kaskadiert */
+function safe(fn){ try{ fn(); }catch(e){ console.warn('Init-Hinweis:', e); } }
+safe(berechnen);
+safe(renderQuick);
+safe(renderInventory);
+safe(renderNiveau);
+</script>
+</body>
+</html>
